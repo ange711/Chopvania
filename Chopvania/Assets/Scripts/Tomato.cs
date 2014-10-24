@@ -4,28 +4,20 @@ using System.Collections;
 public class Tomato : MonoBehaviour
 {
 	public GameObject explosion;
-	public float speed = 2f;
+	float speed = 3f;
 	bool isNearPlayer;
-	float activeTime;
-	//Animator animator;
 	GameObject player;
 
 	
 	void Awake()
 	{
-		//animator = GetComponent<Animator>();
 		player = GameObject.FindGameObjectWithTag("Player");
-		activeTime = 0.19f;
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player")
-		{
-			collisionObject.SendMessage("ApplyDamage", 10);
-		}
-		else if (collisionObject.tag == "PlayerBullet")
+		if (collisionObject.tag == "PlayerBullet")
 		{
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy(gameObject);
@@ -35,10 +27,10 @@ public class Tomato : MonoBehaviour
 	void Update(){
 		isNearPlayer = Mathf.Abs(transform.position.x - player.transform.position.x) < 8f;
 		if (isNearPlayer) {
-			var direction = player.transform.position - transform.position; //vector from enemy to player
-			rigidbody2D.AddForce(direction.normalized * speed);//normalized direction so it doesnt fly super fast
+			var direction = player.transform.position - transform.position;
+			rigidbody2D.AddForce (direction.normalized * speed);
 		}
-		if (Mathf.Abs (transform.position.x - player.transform.position.x) < 1.15f) {
+		if (Mathf.Abs (transform.position.x - player.transform.position.x) < 2f) {
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy (gameObject);
 		}

@@ -9,7 +9,6 @@ public class Hero : MonoBehaviour
 	public LayerMask groundMask;
 	public GameObject bullet;
 	public GameObject deathParticle;
-	public GameObject sweatParticle;
 	public bool isAlive = true;
 
 	Rigidbody2D rigid;
@@ -57,7 +56,10 @@ public class Hero : MonoBehaviour
 		}
 		if (canClimb) {
 			float moveLadder = Input.GetAxis("Vertical");
-			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, moveLadder * runSpeed);
+			if(moveLadder != 0){
+				rigidbody2D.gravityScale = 0;
+				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, moveLadder * runSpeed);
+			}
 		}
 
 		float move = Input.GetAxis("Horizontal");
@@ -66,6 +68,7 @@ public class Hero : MonoBehaviour
 			Flip();
 		if (isGrounded && Input.GetButtonDown("Jump"))
 		{
+			rigidbody2D.gravityScale = 1;
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
 		}
 		else if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0)
@@ -84,8 +87,6 @@ public class Hero : MonoBehaviour
 			return;
 		hurtTime = 0.5f;
 		invincibleTime = 2f;
-		Instantiate(sweatParticle, transform.position, Quaternion.identity);
-
 	}
 
 	void Flip()
@@ -148,7 +149,6 @@ public class Hero : MonoBehaviour
 
 	public void climbMode(){
 		canClimb = true;
-		rigidbody2D.gravityScale = 0;
 	}
 
 	public void climbOff(){
