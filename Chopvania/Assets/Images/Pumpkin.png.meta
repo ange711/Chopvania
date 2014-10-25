@@ -1,6 +1,11 @@
 fileFormatVersion: 2
 guid: ff3e56fb8d8ccaa4eaa93b32fa40280e
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Pumpkin_0
+    21300002: Pumpkin_1
+    21300004: Pumpkin_3
+    21300006: Pumpkin_3
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

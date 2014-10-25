@@ -9,7 +9,7 @@ public class MainCamera : MonoBehaviour
 	void Update()
 	{
 		Vector3 nextPos = transform.position;
-		nextPos.x = focus.position.x;
+		nextPos.x = focus.position.x + 4;
 		transform.position = nextPos;
 	}
 }

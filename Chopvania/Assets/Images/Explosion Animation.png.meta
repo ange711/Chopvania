@@ -1,6 +1,13 @@
 fileFormatVersion: 2
 guid: e67ffeef5bf04354983a69c8188122b4
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: Explosion Animation_0
+    21300002: Explosion Animation_1
+    21300004: Explosion Animation_2
+    21300006: Explosion Animation_3
+    21300008: Explosion Animation_4
+    21300010: Explosion Animation_5
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
