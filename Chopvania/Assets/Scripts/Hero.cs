@@ -8,25 +8,28 @@ public class Hero : MonoBehaviour
 	public float hurtSpeed = -2f;
 	public float jumpForce = 800f;
 	public LayerMask groundMask;
-	public GameObject bullet;
-	public GameObject deathParticle;
 	public bool isAlive = true;
 
-	Rigidbody2D rigid;
 	bool canClimb = false;
 	bool isFacingRight = false;
 	BoxCollider2D boxCollider;
 	bool isGrounded = false;
-	float attackDelay = 0.25f;
+	float attackDelay = 0.5f;
 	public float hurtTime = 0;
 	public float invincibleTime = 0;
 	SpriteRenderer spriteRenderer;
 	bool isLanded = false;
+	Animator animator;
+
+	//Weapon List
+	int weaponType = 0;
+	public GameObject bar;
+	public GameObject knife;
 
 
 	void Awake()
 	{
-
+		animator = GetComponent<Animator>();
 		boxCollider = GetComponent<BoxCollider2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
@@ -35,6 +38,16 @@ public class Hero : MonoBehaviour
 	{
 		Flip();
 	}
+
+	void OnTriggerEnter2D(Collider2D col)
+	{
+		GameObject collisionObject = col.gameObject;
+		if (collisionObject.tag == "PlayerWeapon"){
+			if (Input.GetButtonDown("Fire1"))
+				collisionObject.SendMessage("Remove");
+		}
+	}
+	
 
 	void Update()
 	{
@@ -78,7 +91,7 @@ public class Hero : MonoBehaviour
 		}
 		if (!isGrounded)
 			isLanded = false;
-		UpdateShooting();
+		UpdateAttack();
 	}
 
 
@@ -119,13 +132,7 @@ public class Hero : MonoBehaviour
 		spriteRenderer.color = nextColor;
 	}
 
-	void UpdateShooting()
-	{
-		attackDelay = Mathf.Max(0, attackDelay - Time.deltaTime);
-		if (Input.GetButtonDown("Fire1") && attackDelay <= 0.0f)
-		{
-		}
-	}
+
 
 	public bool IsInvincible()
 	{
@@ -142,12 +149,12 @@ public class Hero : MonoBehaviour
 	public void Die()
 	{
 		isAlive = false;
-		Instantiate(deathParticle, transform.position, Quaternion.identity);
 		spriteRenderer.enabled = false;
 		rigidbody2D.velocity = Vector2.zero;
 		this.enabled = false;
 	}
 
+	//Ladder Climbing
 	public void climbMode(){
 		canClimb = true;
 	}
@@ -155,5 +162,61 @@ public class Hero : MonoBehaviour
 	public void climbOff(){
 		canClimb = false;
 		rigidbody2D.gravityScale = 3;
+	}
+
+
+	//Weapon Methods
+	public void weaponReset(){
+		animator.SetInteger ("WeaponNumber", weaponType);
+	}
+
+	public void pickUpBar(){
+		weaponType = 1;
+		animator.SetInteger ("WeaponNumber", weaponType);
+	}
+
+	public void pickUpKnife(){
+		weaponType = 2;
+		animator.SetInteger ("WeaponNumber", weaponType);
+	}
+
+	void UpdateAttack()
+	{
+		attackDelay = Mathf.Max(0, attackDelay - Time.deltaTime);
+		if (Input.GetButtonDown("Fire1") && attackDelay <= 0.0f){
+			Quaternion rotater;
+			switch(weaponType){
+			case 1:
+				Vector3 barPosition = transform.position + new Vector3(Orient (1.5f), -0.5f, 0);
+				animator.SetInteger ("WeaponNumber", 0);
+				if(isFacingRight)
+					rotater = Quaternion.Euler(0, 0, 180);
+				else
+					rotater = Quaternion.identity;
+
+				GameObject Bar = (GameObject)Instantiate(bar, barPosition, transform.rotation * rotater);
+				Invoke("weaponReset", 0.5f);
+				break;
+
+
+			case 2:
+				Vector3 knifePosition = transform.position + new Vector3(Orient (1.5f), -0.5f, 0);
+				animator.SetInteger ("WeaponNumber", 0);
+				if(!isFacingRight)
+					rotater = Quaternion.Euler(0, 0, 180);
+				else
+					rotater = Quaternion.identity;
+				
+				GameObject Knife = (GameObject)Instantiate(knife, knifePosition, transform.rotation * rotater);
+				if(isFacingRight)
+					Knife.rigidbody2D.AddForce(transform.right*800);
+				else
+					Knife.rigidbody2D.AddForce(-transform.right*800);
+				Invoke("weaponReset", 0.5f);
+				break;
+			
+			}
+			attackDelay = 0.5f;
+		}
 	}
 }

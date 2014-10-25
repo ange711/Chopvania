@@ -3,8 +3,9 @@ using System.Collections;
 
 public class Pumpkin : MonoBehaviour
 {
-	float speed = 3f;
-	bool isNearPlayer;
+
+	int damage = 1;
+	bool isActive = true;
 	CircleCollider2D circlecollider;
 
 	
@@ -17,13 +18,15 @@ public class Pumpkin : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player")
-		{
+		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero> ().IsInvincible () && isActive) {
+			collisionObject.SendMessage ("ApplyDamage", damage);
+		}
+		
+		if(collisionObject.tag == "PlayerWeapon"){
 			circlecollider.isTrigger = false;
-			rigidbody2D.gravityScale = 1f;
+			rigidbody2D.gravityScale = 10f;
+			isActive = false;
 		}
 	}
-	
-	void Update(){
-	}
+
 }
