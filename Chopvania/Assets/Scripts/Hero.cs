@@ -3,7 +3,8 @@ using System.Collections;
 
 public class Hero : MonoBehaviour
 {
-	public float runSpeed = 5f;
+	float runSpeed = 8f;
+	float climbSpeed = 5f;
 	public float hurtSpeed = -2f;
 	public float jumpForce = 800f;
 	public LayerMask groundMask;
@@ -58,7 +59,7 @@ public class Hero : MonoBehaviour
 			float moveLadder = Input.GetAxis("Vertical");
 			if(moveLadder != 0){
 				rigidbody2D.gravityScale = 0;
-				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, moveLadder * runSpeed);
+				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, moveLadder * climbSpeed);
 			}
 		}
 
@@ -68,7 +69,7 @@ public class Hero : MonoBehaviour
 			Flip();
 		if (isGrounded && Input.GetButtonDown("Jump"))
 		{
-			rigidbody2D.gravityScale = 1;
+			rigidbody2D.gravityScale = 3;
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
 		}
 		else if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0)
@@ -153,6 +154,6 @@ public class Hero : MonoBehaviour
 
 	public void climbOff(){
 		canClimb = false;
-		rigidbody2D.gravityScale = 1;
+		rigidbody2D.gravityScale = 3;
 	}
 }

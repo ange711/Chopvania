@@ -50,6 +50,7 @@
      <Compile Include="Assets\Scripts\Hero.cs" />
      <Compile Include="Assets\Scripts\Ladder.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
+     <Compile Include="Assets\Scripts\Pumpkin.cs" />
      <Compile Include="Assets\Scripts\Tomato.cs" />
      <Compile Include="Assets\Scripts\TomatoExplosion.cs" />
   </ItemGroup>

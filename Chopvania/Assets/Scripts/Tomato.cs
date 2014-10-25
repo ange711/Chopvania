@@ -7,10 +7,12 @@ public class Tomato : MonoBehaviour
 	float speed = 3f;
 	bool isNearPlayer;
 	GameObject player;
+	BoxCollider2D boxcollider;
 
 	
 	void Awake()
 	{
+		boxcollider = GetComponent<BoxCollider2D>();
 		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
@@ -30,7 +32,7 @@ public class Tomato : MonoBehaviour
 			var direction = player.transform.position - transform.position;
 			rigidbody2D.AddForce (direction.normalized * speed);
 		}
-		if (Mathf.Abs (transform.position.x - player.transform.position.x) < 2f) {
+		if (Mathf.Abs (transform.position.x - player.transform.position.x) < (boxcollider.size.x/1.5f)) {
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy (gameObject);
 		}
