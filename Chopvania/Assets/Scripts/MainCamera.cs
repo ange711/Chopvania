@@ -5,7 +5,7 @@ public class MainCamera : MonoBehaviour
 {
 
 	public Transform focus;
-	public float dampTime = 0.1f;
+	public float dampTime = 0.005f;
 	private Vector3 velocity = Vector3.zero;
 
 	void Update(){
