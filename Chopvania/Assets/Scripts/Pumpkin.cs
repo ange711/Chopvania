@@ -26,6 +26,7 @@ public class Pumpkin : MonoBehaviour
 			circlecollider.isTrigger = false;
 			rigidbody2D.gravityScale = 10f;
 			isActive = false;
+			GetComponent<Animator>().SetBool("isDead", true);
 		}
 	}
 

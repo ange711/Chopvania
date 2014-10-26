@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Cabbage : MonoBehaviour
 {
+	public float triggerDistance = 2f;
 	bool isNearPlayer = false;
 	float activeTime = 2f;
 	bool isActive;
@@ -38,7 +39,7 @@ public class Cabbage : MonoBehaviour
 		}
 	
 		if (isActive) {
-			isNearPlayer = (Mathf.Abs(transform.position.x - player.transform.position.x) < 2f);
+			isNearPlayer = (Mathf.Abs(transform.position.x - player.transform.position.x) < triggerDistance);
 			if (isNearPlayer) {
 				animator.SetBool ("IsNearPlayer", true);
 				timerFlag = true;

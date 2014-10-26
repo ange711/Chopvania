@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class MainCamera : MonoBehaviour
@@ -7,20 +7,25 @@ public class MainCamera : MonoBehaviour
 	public Transform focus;
 	public float dampTime = 0.005f;
 	private Vector3 velocity = Vector3.zero;
+	private float vel = 0.0f;
+	public bool zoomedOut = false;
 
 	void Update(){
-
-//		Vector3 point = camera.WorldToViewportPoint(focus.position);
-//		Vector3 delta = focus.position - camera.ViewportToWorldPoint(new Vector3(0.5f, 0.5f, point.z)); //(new Vector3(0.5, 0.5, point.z));
-//		Vector3 destination = transform.position + delta;
-//		transform.position = Vector3.SmoothDamp(transform.position, destination, ref velocity, dampTime);
-
-		Vector3 nextPos = transform.position;
-		nextPos.x = focus.position.x + 4;
-		float ydiff = Mathf.Abs(focus.position.y - nextPos.y);
-		if(ydiff > 3){
-			nextPos.y = focus.position.y;
+		if(!zoomedOut){
+			Vector3 nextPos = transform.position;
+			nextPos.x = focus.position.x + 4;
+			float ydiff = Mathf.Abs(focus.position.y - nextPos.y);
+			if(ydiff > 3){
+				nextPos.y = focus.position.y;
+			}
+			transform.position = Vector3.SmoothDamp(transform.position, nextPos, ref velocity, dampTime);
 		}
-		transform.position = Vector3.SmoothDamp(transform.position, nextPos, ref velocity, dampTime);
+
+		if(zoomedOut){
+			Vector3 newPos = new Vector3(268.316f, -24.93814f, -10f);
+			transform.position = Vector3.SmoothDamp(transform.position, newPos, ref velocity, dampTime);
+			float size = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, 11.75782f, ref vel, dampTime);
+			GetComponent<Camera>().orthographicSize = size;
+		}
 	}
 }

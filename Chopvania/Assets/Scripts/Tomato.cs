@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
 
-public class Tomato : MonoBehaviour
-{
+public class Tomato : MonoBehaviour{
+
 	public GameObject explosion;
 	float speed = 3f;
 	bool isNearPlayer;
@@ -16,8 +16,7 @@ public class Tomato : MonoBehaviour
 		player = GameObject.FindGameObjectWithTag("Player");
 	}
 	
-	void OnTriggerEnter2D(Collider2D col)
-	{
+	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon")
 		{

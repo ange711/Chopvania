@@ -22,7 +22,8 @@ public class Hero : MonoBehaviour
 	Animator animator;
 
 	//Weapon List
-	int weaponType = 0;
+	int weaponType = 1;
+	int Ammo = 0;
 	public GameObject bar;
 	public GameObject knife;
 
@@ -91,6 +92,11 @@ public class Hero : MonoBehaviour
 		}
 		if (!isGrounded)
 			isLanded = false;
+		//Add for each weapon that has ammo, with 
+		if (Ammo == 0 && (weaponType == 2)) {
+			weaponType = 1;
+			animator.SetInteger("WeaponNumber", 1);
+				}
 		UpdateAttack();
 	}
 
@@ -177,6 +183,7 @@ public class Hero : MonoBehaviour
 
 	public void pickUpKnife(){
 		weaponType = 2;
+		Ammo = 1;
 		animator.SetInteger ("WeaponNumber", weaponType);
 	}
 
@@ -193,9 +200,9 @@ public class Hero : MonoBehaviour
 					rotater = Quaternion.Euler(0, 0, 180);
 				else
 					rotater = Quaternion.identity;
-
 				GameObject Bar = (GameObject)Instantiate(bar, barPosition, transform.rotation * rotater);
-				Invoke("weaponReset", 0.5f);
+				//Bar.rigidbody2D.velocity = rigidbody2D.velocity;
+				Invoke("weaponReset", 0.1f);
 				break;
 
 
@@ -212,6 +219,7 @@ public class Hero : MonoBehaviour
 					Knife.rigidbody2D.AddForce(transform.right*800);
 				else
 					Knife.rigidbody2D.AddForce(-transform.right*800);
+				Ammo--;
 				Invoke("weaponReset", 0.5f);
 				break;
 			

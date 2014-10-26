@@ -3,19 +3,19 @@ using System.Collections;
 
 public class Ladder : MonoBehaviour
 {
-	bool isNearPlayer = false;
-	float activeTime = 2f;
+	//bool isNearPlayer = false;
+	//float activeTime = 2f;
 	bool isActive;
-	bool timerFlag;
-	Animator animator;
-	GameObject player;
+	//bool timerFlag;
+	//Animator animator;
+	//GameObject player;
 	
 	void Awake()
 	{
-		animator = GetComponent<Animator>();
-		player = GameObject.FindGameObjectWithTag("Player");
+		//animator = GetComponent<Animator>();
+		//player = GameObject.FindGameObjectWithTag("Player");
 		isActive = true;
-		timerFlag = false;
+		//timerFlag = false;
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
