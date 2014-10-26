@@ -18,8 +18,7 @@ public class Tomato : MonoBehaviour{
 	
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "PlayerWeapon")
-		{
+		if (collisionObject.tag == "PlayerWeapon"){
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}

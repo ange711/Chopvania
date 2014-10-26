@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TrapFloor : MonoBehaviour {
 
-	float fallTimer = 0.3f;
+	float fallTimer = 0.2f;
 	bool timerOn = false;
 
 

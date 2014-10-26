@@ -49,7 +49,10 @@
      <Compile Include="Assets\Scripts\Bar.cs" />
      <Compile Include="Assets\Scripts\Cabbage.cs" />
      <Compile Include="Assets\Scripts\CameraZoomTrigger.cs" />
+     <Compile Include="Assets\Scripts\Cotainer.cs" />
+     <Compile Include="Assets\Scripts\Fallings.cs" />
      <Compile Include="Assets\Scripts\Hero.cs" />
+     <Compile Include="Assets\Scripts\Ice_path.cs" />
      <Compile Include="Assets\Scripts\Knife.cs" />
      <Compile Include="Assets\Scripts\Ladder.cs" />
      <Compile Include="Assets\Scripts\MainCamera.cs" />
@@ -59,6 +62,7 @@
      <Compile Include="Assets\Scripts\Tomato.cs" />
      <Compile Include="Assets\Scripts\TomatoExplosion.cs" />
      <Compile Include="Assets\Scripts\TrapFloor.cs" />
+     <Compile Include="Assets\Scripts\nail.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

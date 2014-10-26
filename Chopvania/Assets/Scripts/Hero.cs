@@ -11,7 +11,7 @@ public class Hero : MonoBehaviour
 	public bool isAlive = true;
 
 	bool canClimb = false;
-	bool isFacingRight = false;
+	public bool isFacingRight = false;
 	BoxCollider2D boxCollider;
 	bool isGrounded = false;
 	float attackDelay = 0.5f;
@@ -183,7 +183,7 @@ public class Hero : MonoBehaviour
 
 	public void pickUpKnife(){
 		weaponType = 2;
-		Ammo = 1;
+		Ammo = 6;
 		animator.SetInteger ("WeaponNumber", weaponType);
 	}
 
