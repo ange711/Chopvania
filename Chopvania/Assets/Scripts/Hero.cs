@@ -31,6 +31,7 @@ public class Hero : MonoBehaviour
 	void Awake()
 	{
 		animator = GetComponent<Animator>();
+		animator.SetInteger("WeaponNumber", 1);
 		boxCollider = GetComponent<BoxCollider2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
