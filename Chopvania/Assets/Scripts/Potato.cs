@@ -46,7 +46,9 @@ public class Potato : MonoBehaviour {
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon"){
 			--health;
-				invincibleTime = 0.5f;
+			invincibleTime = 0.5f;
+			float blowback = Mathf.Sign(player.transform.position.x - transform.position.x);
+			rigidbody2D.AddForce(new Vector2(blowback * -150f, 0));
 			if(health == 0){
 				Instantiate(explosion, transform.position, Quaternion.identity);
 				Destroy(gameObject);
