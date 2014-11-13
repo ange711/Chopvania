@@ -79,6 +79,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 553b9d0b7ca93a641bcc83249ecfc987, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  triggerDistance: 2
+  sleepParticle: {fileID: 100000, guid: f91ba814dda64434fb065863a760f415, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

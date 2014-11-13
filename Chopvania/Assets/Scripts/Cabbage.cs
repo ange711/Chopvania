@@ -10,6 +10,7 @@ public class Cabbage : MonoBehaviour
 	bool timerFlag;
 	Animator animator;
 	GameObject player;
+	public GameObject sleepParticle;
 	
 	void Awake()
 	{
@@ -45,9 +46,9 @@ public class Cabbage : MonoBehaviour
 				timerFlag = true;
 			}
 			if (timerFlag) {
-				//Can Apply damage if peircing box collider, but must remain solid, how?
 				activeTime = Mathf.Max (0, activeTime - Time.deltaTime);
 				if (activeTime <= 0f) {
+					GameObject sleep = (GameObject)Instantiate(sleepParticle, transform.position, Quaternion.Euler (-72f, 90f, -90f));
 					isActive = false;
 					activeTime = 5f; //idle time length
 					timerFlag = false;
@@ -55,7 +56,6 @@ public class Cabbage : MonoBehaviour
 				}
 			} 
 		}
-
 	}
 
 }
