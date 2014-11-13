@@ -24,14 +24,16 @@ public class Hero : MonoBehaviour
 	//Weapon List
 	int weaponType = 1;
 	int Ammo = 0;
+	bool canDrop = false;
+	float dropTimer = 0.5f;
 	public GameObject bar;
 	public GameObject knife;
+	public GameObject droppedKnife;
 
 
 	void Awake()
 	{
 		animator = GetComponent<Animator>();
-		animator.SetInteger("WeaponNumber", 1);
 		boxCollider = GetComponent<BoxCollider2D>();
 		spriteRenderer = GetComponent<SpriteRenderer>();
 	}
@@ -41,14 +43,7 @@ public class Hero : MonoBehaviour
 		Flip();
 	}
 
-	void OnTriggerEnter2D(Collider2D col)
-	{
-		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "PlayerWeapon"){
-			if (Input.GetButtonDown("Fire1"))
-				collisionObject.SendMessage("Remove");
-		}
-	}
+
 	
 
 	void Update()
@@ -97,7 +92,12 @@ public class Hero : MonoBehaviour
 		if (Ammo == 0 && (weaponType == 2)) {
 			weaponType = 1;
 			animator.SetInteger("WeaponNumber", 1);
-				}
+			}
+
+		if (Input.GetButtonDown ("Fire2") && weaponType != 1 && canDrop && isLanded && !canClimb) {
+			DropWeapon ();
+			canDrop = false;
+		}
 		UpdateAttack();
 	}
 
@@ -180,12 +180,18 @@ public class Hero : MonoBehaviour
 	public void pickUpBar(){
 		weaponType = 1;
 		animator.SetInteger ("WeaponNumber", weaponType);
+		Invoke ("canDropReset", dropTimer);
 	}
 
-	public void pickUpKnife(){
+	public void pickUpKnife(int ammo){
 		weaponType = 2;
-		Ammo = 6;
+		Ammo = ammo;
 		animator.SetInteger ("WeaponNumber", weaponType);
+		Invoke ("canDropReset", dropTimer);
+	}
+
+	void canDropReset(){
+		canDrop = true;
 	}
 
 	void UpdateAttack()
@@ -227,5 +233,16 @@ public class Hero : MonoBehaviour
 			}
 			attackDelay = 0.5f;
 		}
+	}
+
+	void DropWeapon(){
+			switch(weaponType){
+			case 2:
+			GameObject Knife = (GameObject)Instantiate(droppedKnife, new Vector3(transform.position.x,transform.position.y - 0.8f,transform.position.z) , Quaternion.identity);
+				Knife.SendMessage ("setAmmo",Ammo);
+				Ammo = 0;
+				animator.SetInteger ("WeaponNumber", 1);
+				break;
+			}
 	}
 }

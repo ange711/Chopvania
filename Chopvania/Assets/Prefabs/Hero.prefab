@@ -101,10 +101,12 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   isAlive: 1
+  isFacingRight: 0
   hurtTime: 0
   invincibleTime: 0
-  bar: {fileID: 100000, guid: 875a5faf9a1efea46adea53bae98fbbf, type: 2}
-  knife: {fileID: 100000, guid: 667dbd1f227735144bec8c65006ff0cc, type: 2}
+  bar: {fileID: 100000, guid: d850bc9e15cd3fd4dab8879756fc893f, type: 2}
+  knife: {fileID: 100000, guid: 39be87af51a32224eb48862537fb8df4, type: 2}
+  droppedKnife: {fileID: 100000, guid: 79e7fc01c8e9ff443a94cc1263050a22, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
