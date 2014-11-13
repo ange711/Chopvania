@@ -59,7 +59,7 @@ ParticleSystem:
   InitialModule:
     enabled: 1
     startLifetime:
-      scalar: 1
+      scalar: .699999988
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -92,7 +92,7 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
     startSpeed:
-      scalar: 5
+      scalar: 3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -219,7 +219,7 @@ ParticleSystem:
         rgba: 4281838419
       minMaxState: 0
     startSize:
-      scalar: 1
+      scalar: .699999988
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -286,7 +286,7 @@ ParticleSystem:
       minMaxState: 0
     gravityModifier: 0
     inheritVelocity: 0
-    maxNumParticles: 1000
+    maxNumParticles: 5
   ShapeModule:
     serializedVersion: 2
     enabled: 1
@@ -416,27 +416,27 @@ ParticleSystem:
         m_PostInfinity: 2
       minMaxState: 0
   ColorModule:
-    enabled: 0
+    enabled: 1
     gradient:
       maxGradient:
         key0:
           serializedVersion: 2
-          rgba: 4294967295
+          rgba: 4278255360
         key1:
           serializedVersion: 2
-          rgba: 4294967295
+          rgba: 3355508480
         key2:
           serializedVersion: 2
-          rgba: 0
+          rgba: 2937357059
         key3:
           serializedVersion: 2
-          rgba: 0
+          rgba: 2516582400
         key4:
           serializedVersion: 2
-          rgba: 0
+          rgba: 2097152000
         key5:
           serializedVersion: 2
-          rgba: 0
+          rgba: 838860800
         key6:
           serializedVersion: 2
           rgba: 0
@@ -444,23 +444,23 @@ ParticleSystem:
           serializedVersion: 2
           rgba: 0
         ctime0: 0
-        ctime1: 65535
-        ctime2: 0
+        ctime1: 65342
+        ctime2: 65535
         ctime3: 0
         ctime4: 0
         ctime5: 0
         ctime6: 0
         ctime7: 0
         atime0: 0
-        atime1: 65535
-        atime2: 0
-        atime3: 0
-        atime4: 0
-        atime5: 0
-        atime6: 0
+        atime1: 11565
+        atime2: 24865
+        atime3: 38550
+        atime4: 52235
+        atime5: 59174
+        atime6: 65150
         atime7: 0
-        m_NumColorKeys: 2
-        m_NumAlphaKeys: 2
+        m_NumColorKeys: 3
+        m_NumAlphaKeys: 7
       minGradient:
         key0:
           serializedVersion: 2
