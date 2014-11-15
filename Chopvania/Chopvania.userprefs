@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Knife.cs">
     <Files>
-      <File FileName="Assets\Scripts\Hero.cs" Line="245" Column="4" />
-      <File FileName="Assets\Scripts\Knife.cs" Line="9" Column="2" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="64" Column="20" />
+      <File FileName="Assets\Scripts\Knife.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
