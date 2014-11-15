@@ -46,7 +46,6 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\Bar.cs" />
      <Compile Include="Assets\Scripts\Cabbage.cs" />
      <Compile Include="Assets\Scripts\CameraZoomTrigger.cs" />
      <Compile Include="Assets\Scripts\Cotainer.cs" />

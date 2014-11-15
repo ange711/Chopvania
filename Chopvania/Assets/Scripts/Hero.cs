@@ -24,6 +24,7 @@ public class Hero : MonoBehaviour
 	//Weapon List
 	int weaponType = 1;
 	int Ammo = 0;
+	int weaponsClose = 0;
 	bool canDrop = false;
 	float dropTimer = 0.5f;
 	public GameObject bar;
@@ -89,12 +90,13 @@ public class Hero : MonoBehaviour
 		if (!isGrounded)
 			isLanded = false;
 		//Add for each weapon that has ammo, with 
-		if (Ammo == 0 && (weaponType == 2)) {
+		if (Ammo == 0 && (weaponType != 1)) {
 			weaponType = 1;
 			animator.SetInteger("WeaponNumber", 1);
+			canDrop = false;
 			}
 
-		if (Input.GetButtonDown ("Fire2") && weaponType != 1 && canDrop && isLanded && !canClimb) {
+		if (Input.GetButtonDown ("Fire2") && weaponType != 1 && canDrop && isLanded && !canClimb && weaponsClose == 0) {
 			DropWeapon ();
 			canDrop = false;
 		}
@@ -245,4 +247,21 @@ public class Hero : MonoBehaviour
 				break;
 			}
 	}
+
+	public int getWeaponType(){
+		return weaponType;
+	}
+
+	public int getWeaponsCloseBy(){
+		return weaponsClose;
+	}
+
+	public void weaponInRange(){
+		weaponsClose++;
+	}
+
+	public void weaponOutOfRange(){
+		weaponsClose--;
+	}
+
 }

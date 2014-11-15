@@ -1,10 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\BoundingSphere.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Knife.cs">
     <Files>
-      <File FileName="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\Player.cs" Line="27" Column="1" />
-      <File FileName="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\Balloon.cs" Line="21" Column="30" />
-      <File FileName="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\BoundingSphere.cs" Line="11" Column="39" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="245" Column="4" />
+      <File FileName="Assets\Scripts\Knife.cs" Line="9" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
