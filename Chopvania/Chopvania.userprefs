@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\CrossHair.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Knife.cs">
     <Files>
-      <File FileName="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\Balloon.cs" Line="64" Column="2" />
-      <File FileName="..\..\School\COMP 376\Tutorials\Assignment 2\DavidPaparo_6664334\Assets\Scripts\CrossHair.cs" Line="8" Column="44" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="64" Column="20" />
+      <File FileName="Assets\Scripts\Knife.cs" Line="11" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
