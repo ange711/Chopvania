@@ -7,7 +7,11 @@ TagManager:
   - Ladder
   - Enemy
   - PlayerWeapon
+  - Fire
+  - ExplodingWall
+  - Wall
   - 
+  - Water
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX
@@ -18,7 +22,7 @@ TagManager:
   Builtin Layer 6: 
   Builtin Layer 7: 
   User Layer 8: Ground
-  User Layer 9: 
+  User Layer 9: BackGround
   User Layer 10: 
   User Layer 11: 
   User Layer 12: 
@@ -42,6 +46,10 @@ TagManager:
   User Layer 30: 
   User Layer 31: 
   m_SortingLayers:
+  - name: Background
+    userID: 1
+    uniqueID: 250498441
+    locked: 0
   - name: Default
     userID: 0
     uniqueID: 0

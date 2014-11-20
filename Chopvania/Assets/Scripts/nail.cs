@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class nail : MonoBehaviour {
-
+	
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
@@ -11,6 +11,6 @@ public class nail : MonoBehaviour {
 		{
 			collisionObject.SendMessage("ApplyDamage", 1);
 		}
-
+		
 	}
 }

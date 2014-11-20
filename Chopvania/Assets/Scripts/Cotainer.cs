@@ -2,13 +2,13 @@
 using System.Collections;
 
 public class Cotainer : MonoBehaviour {
-
+	
 	public GameObject enemry;
 	public int life = 1;
-
+	
 	
 	Transform playerTransform;
-
+	
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
@@ -33,6 +33,6 @@ public class Cotainer : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	
 }

@@ -4,7 +4,7 @@ using System.Collections;
 public class Tomato : MonoBehaviour{
 
 	public GameObject explosion;
-	float speed = 3f;
+	public float speed = 3f;
 	bool isNearPlayer;
 	GameObject player;
 	BoxCollider2D boxcollider;

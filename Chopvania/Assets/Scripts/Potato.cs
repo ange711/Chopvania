@@ -50,8 +50,13 @@ public class Potato : MonoBehaviour {
 			float blowback = Mathf.Sign(player.transform.position.x - transform.position.x);
 			rigidbody2D.AddForce(new Vector2(blowback * -150f, 0));
 			if(health == 0){
-				Instantiate(explosion, transform.position, Quaternion.identity);
 				Destroy(gameObject);
+				GameObject walls = GameObject.FindGameObjectWithTag("ExplodingWall");
+				Vector2 wall = new Vector2(walls.transform.position.x, walls.transform.position.y);
+				var explode = (GameObject) Instantiate(explosion, wall, Quaternion.identity);
+				explode.transform.localScale = new Vector3(9.0f, 9.0f, 2.0f);
+				walls.AddComponent("TimedDeath");
+				Instantiate(explosion, transform.position, Quaternion.identity);
 			}
 		}
 
