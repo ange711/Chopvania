@@ -16,20 +16,9 @@ public class Fallings : MonoBehaviour {
 	
 	void Update()
 	{
-		isNearPlayer = Mathf.Abs (transform.position.x - Player.transform.position.x) <0.4f && transform.position.y -Player.transform.position.y < 4.5f  ;
-		if (isNearPlayer) 
-		{
-			float fallingTime = 1.0f;
-			if (fallingTime > 0.1) {
-				rigidbody2D.velocity = new Vector2 (0, -3);
-				fallingTime -= Time.deltaTime;
-			}
-			else 
-			{
-				Destroy(gameObject);
-			}
-		}
-		
+		isNearPlayer = Vector2.Distance (transform.position, Player.transform.position) < 4f;
+		if(isNearPlayer)
+			rigidbody2D.velocity = new Vector2 (0, -3);
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
@@ -37,6 +26,7 @@ public class Fallings : MonoBehaviour {
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Player") {
 			collisionObject.SendMessage ("ApplyDamage", 1);
+			Destroy(gameObject);
 		} 
 		else {
 			Destroy(gameObject);
