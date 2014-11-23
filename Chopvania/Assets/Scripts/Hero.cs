@@ -240,8 +240,14 @@ public class Hero : MonoBehaviour
 	void DropWeapon(){
 			switch(weaponType){
 			case 2:
-			GameObject Knife = (GameObject)Instantiate(droppedKnife, new Vector3(transform.position.x,transform.position.y - 0.8f,transform.position.z) , Quaternion.identity);
+				GameObject Knife = (GameObject)Instantiate(droppedKnife, new Vector3(transform.position.x,transform.position.y - 0.8f,transform.position.z) , Quaternion.identity);
 				Knife.SendMessage ("setAmmo",Ammo);
+				Ammo = 0;
+				animator.SetInteger ("WeaponNumber", 1);
+				break;
+			case 3:
+				GameObject Skillet = (GameObject)Instantiate(droppedKnife, new Vector3(transform.position.x,transform.position.y - 0.8f,transform.position.z) , Quaternion.identity);
+				Skillet.SendMessage ("setAmmo",Ammo);
 				Ammo = 0;
 				animator.SetInteger ("WeaponNumber", 1);
 				break;

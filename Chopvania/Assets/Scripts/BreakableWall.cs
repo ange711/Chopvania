@@ -9,7 +9,7 @@ public class BreakableWall : MonoBehaviour
 	{
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Enemy") {
-			Instantiate (wallParticle, new Vector3(transform.position.x, transform.position.y, -10f), Quaternion.identity);
+			Instantiate (wallParticle, new Vector3(transform.position.x, transform.position.y + 1.5f, -10f), Quaternion.identity);
 			Destroy (gameObject);
 			collisionObject.SendMessage ("Explode");
 		}

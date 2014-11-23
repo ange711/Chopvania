@@ -65,6 +65,7 @@
      <Compile Include="Assets\Scripts\MiniShroom.cs" />
      <Compile Include="Assets\Scripts\Potato.cs" />
      <Compile Include="Assets\Scripts\Pumpkin.cs" />
+     <Compile Include="Assets\Scripts\Skillet.cs" />
      <Compile Include="Assets\Scripts\SlantCamera.cs" />
      <Compile Include="Assets\Scripts\Tentacle.cs" />
      <Compile Include="Assets\Scripts\TimedDeath.cs" />
