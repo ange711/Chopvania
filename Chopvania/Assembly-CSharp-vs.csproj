@@ -49,6 +49,7 @@
      <Compile Include="Assets\Images\Sewers\MusicHandler.cs" />
      <Compile Include="Assets\Scripts\Bar.cs" />
      <Compile Include="Assets\Scripts\Boss.cs" />
+     <Compile Include="Assets\Scripts\BreakableWall.cs" />
      <Compile Include="Assets\Scripts\Cabbage.cs" />
      <Compile Include="Assets\Scripts\CameraZoomTrigger.cs" />
      <Compile Include="Assets\Scripts\Cotainer.cs" />

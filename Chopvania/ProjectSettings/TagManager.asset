@@ -8,10 +8,12 @@ TagManager:
   - Enemy
   - PlayerWeapon
   - Fire
-  - ExplodingWall
+  - Explosion
   - Wall
-  - 
+  - Breakable
   - Water
+  - 
+  - 
   - 
   Builtin Layer 0: Default
   Builtin Layer 1: TransparentFX

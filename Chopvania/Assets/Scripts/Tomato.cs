@@ -19,11 +19,15 @@ public class Tomato : MonoBehaviour{
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon"){
-			Instantiate(explosion, transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			Explode ();
 		}
 	}
-	
+
+	public void Explode(){
+		Instantiate(explosion, transform.position, Quaternion.identity);
+		Destroy(gameObject);
+	}
+
 	void Update(){
 		isNearPlayer = Mathf.Abs(transform.position.x - player.transform.position.x) < 8f;
 		if (isNearPlayer) {

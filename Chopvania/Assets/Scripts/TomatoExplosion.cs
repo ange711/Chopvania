@@ -4,7 +4,6 @@ using System.Collections;
 public class TomatoExplosion : MonoBehaviour
 {
 	public int damage = 5;
-	float activeTime = 0.35f;
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{
@@ -14,11 +13,4 @@ public class TomatoExplosion : MonoBehaviour
 		}
 	}
 
-	void Update(){
-		Invoke ("Remove", activeTime);
-	}
-
-	void Remove(){
-		Destroy(gameObject);
-	}
 }

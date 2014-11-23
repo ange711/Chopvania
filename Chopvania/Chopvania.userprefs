@@ -1,12 +1,13 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\TrapFloor.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FireWalls.cs">
     <Files>
-      <File FileName="Assets\Scripts\Potato.cs" Line="38" Column="43" />
-      <File FileName="Assets\Scripts\Hero.cs" Line="125" Column="2" />
-      <File FileName="Assets\Scripts\MainCamera.cs" Line="11" Column="32" />
-      <File FileName="Assets\Scripts\CameraZoomTrigger.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\TrapFloor.cs" Line="18" Column="3" />
+      <File FileName="Assets\Scripts\TimedDeath.cs" Line="12" Column="24" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="187" Column="2" />
+      <File FileName="Assets\Scripts\Tomato.cs" Line="20" Column="47" />
+      <File FileName="Assets\Scripts\BreakableWall.cs" Line="18" Column="1" />
+      <File FileName="Assets\Scripts\TrapFloor.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\FireWalls.cs" Line="5" Column="2" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -3,7 +3,7 @@ using System.Collections;
 
 public class FireWalls : MonoBehaviour {
 
-	void Awake () {
+	void Update () {
 		rigidbody2D.velocity = new Vector2 (0,0.7f);
 	}
 
@@ -13,7 +13,7 @@ public class FireWalls : MonoBehaviour {
 		if (collisionObject.tag == "Player") {
 			collisionObject.SendMessage ("ApplyDamage", 99999);
 		} 
-		else {
+		if(collisionObject.tag != "Fire" && collisionObject.tag != "Player"){
 			Destroy(collisionObject.gameObject);
 		}
 	}

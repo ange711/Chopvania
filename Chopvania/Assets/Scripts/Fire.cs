@@ -7,17 +7,11 @@ public class Fire : MonoBehaviour {
 	{
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Player") {
-						collisionObject.SendMessage ("ApplyDamage", 99999);
-				} 
-		else if(collisionObject.tag == "Fire")
-		{
-		}
-
+			collisionObject.SendMessage ("ApplyDamage", 99999);
+		} 
 		else {
 			Destroy(collisionObject.gameObject);
-				}
-	    
-		
+		}
 	}
 	
 }
