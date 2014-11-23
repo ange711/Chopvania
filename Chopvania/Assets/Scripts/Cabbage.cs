@@ -30,6 +30,14 @@ public class Cabbage : MonoBehaviour
 	}
 
 
+	void OnTriggerEnter2D(Collider2D col){
+		GameObject collisionObject = col.gameObject;
+		if (collisionObject.tag == "PlayerWeapon" && isActive){
+			disabled ();
+		}
+	}
+
+
 	void Update(){
 		if (!isActive) {
 			activeTime = activeTime - Time.deltaTime;
@@ -48,14 +56,19 @@ public class Cabbage : MonoBehaviour
 			if (timerFlag) {
 				activeTime = Mathf.Max (0, activeTime - Time.deltaTime);
 				if (activeTime <= 0f) {
-					GameObject sleep = (GameObject)Instantiate(sleepParticle, transform.position, Quaternion.Euler (-72f, 90f, -90f));
-					isActive = false;
-					activeTime = 5f; //idle time length
-					timerFlag = false;
-					animator.SetBool ("IsNearPlayer", false);
+					disabled();
 				}
 			} 
 		}
 	}
+
+	void disabled(){
+		GameObject sleep = (GameObject)Instantiate(sleepParticle, transform.position, Quaternion.Euler (-72f, 90f, -90f));
+		isActive = false;
+		activeTime = 5f; //idle time length
+		timerFlag = false;
+		animator.SetBool ("IsNearPlayer", false);
+	}
+
 
 }
