@@ -33,6 +33,7 @@ public class Tomato : MonoBehaviour{
 		if (isNearPlayer) {
 			var direction = player.transform.position - transform.position;
 			rigidbody2D.AddForce (direction.normalized * speed);
+			transform.localRotation *= Quaternion.Euler (0f, 0f, 10f);
 		}
 		if (Mathf.Abs (transform.position.x - player.transform.position.x) < (boxcollider.size.x/1.5f)) {
 			Instantiate(explosion, transform.position, Quaternion.identity);

@@ -9,10 +9,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
-  - 61: {fileID: 6100000}
-  - 50: {fileID: 5000000}
-  - 114: {fileID: 11400000}
   - 95: {fileID: 9500000}
+  - 114: {fileID: 11400000}
+  - 50: {fileID: 5000000}
+  - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -27,8 +27,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: .143984526, y: -4.51445484, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -4.7360034, y: -3.7650435, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -56,7 +56,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1.60000002, y: 2.00999999}
+  m_Size: {x: .200000003, y: .300000012}
   m_Center: {x: 0, y: 0}
 --- !u!95 &9500000
 Animator:
@@ -67,11 +67,12 @@ Animator:
   m_GameObject: {fileID: 100000}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 87bbc1120269aa343a7308e35bf75d1c, type: 2}
+  m_Controller: {fileID: 9100000, guid: d9374e89f74aeb449a713388e894ce42, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -83,17 +84,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb77959f496619944b25d5606093ea90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lifebar: {fileID: 0}
   hurtSpeed: -2
-  jumpForce: 600
+  jumpForce: 700
   groundMask:
     serializedVersion: 2
     m_Bits: 256
   isAlive: 1
-  isFacingRight: 0
+  isFacingRight: 1
   hurtTime: 0
   invincibleTime: 0
-  bar: {fileID: 100000, guid: d850bc9e15cd3fd4dab8879756fc893f, type: 2}
-  knife: {fileID: 100000, guid: 39be87af51a32224eb48862537fb8df4, type: 2}
+  footObj: {fileID: 100000, guid: f3a37e71155dc5e4aa2b58fadd07201f, type: 2}
+  barObj: {fileID: 100000, guid: d850bc9e15cd3fd4dab8879756fc893f, type: 2}
+  droppedBar: {fileID: 100000, guid: fa9aeb95aa3da2044adb4c88e0af94bd, type: 2}
+  knifeObj: {fileID: 100000, guid: 39be87af51a32224eb48862537fb8df4, type: 2}
   droppedKnife: {fileID: 100000, guid: 79e7fc01c8e9ff443a94cc1263050a22, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
@@ -115,7 +119,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 0c4f7c6a637c8d44db27a96d8628bda1, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2349aa386eda96a498b5806338418f06, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
 Prefab:

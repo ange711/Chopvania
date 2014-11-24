@@ -11,3 +11,11 @@ EditorBuildSettings:
     path: Assets/Scenes/Foods 'R Us.unity
   - enabled: 1
     path: Assets/Scenes/Fire Escape.unity
+  - enabled: 1
+    path: Assets/Scenes/BUILDINGTOP.unity
+  - enabled: 1
+    path: Assets/Scenes/Sewers.unity
+  - enabled: 1
+    path: Assets/Scenes/MGC.unity
+  - enabled: 1
+    path: Assets/Scenes/bossRoom.unity

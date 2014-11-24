@@ -11,7 +11,7 @@ public class Knife : MonoBehaviour
 	{
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Player" && isOnFloor && Input.GetButtonDown("Fire2")){
-			if(collisionObject.GetComponent<Hero>().getWeaponsCloseBy () == 1 && collisionObject.GetComponent<Hero>().getWeaponType () == 1){
+			if(collisionObject.GetComponent<Hero>().getWeaponsCloseBy () == 1 && collisionObject.GetComponent<Hero>().getWeaponType () == 0){
 				collisionObject.SendMessage ("pickUpKnife", Ammo);
 				collisionObject.SendMessage ("weaponOutOfRange");
 				Destroy(gameObject);

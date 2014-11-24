@@ -1,16 +1,14 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="..\..\mcAnimations\Hero.cs">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Hero.cs">
     <Files>
-      <File FileName="..\..\School\COMP 376\Tutorials\Tutorial04 - Enemies  Text\Tutorial04\Assets\Scripts\Megaman.cs" Line="1" Column="1" />
-      <File FileName="..\..\mcAnimations\Hero.cs" Line="140" Column="3" />
-      <File FileName="Assets\Scripts\Hero.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="300" Column="1" />
+      <File FileName="Assets\Scripts\Tomato.cs" Line="28" Column="23" />
+      <File FileName="Assets\Scripts\Hero.cs" Line="257" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="C:\Users\David\Desktop\Chopvania\Chopvania\Assets\Scripts\Hero.cs" line="249" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
 </Properties>

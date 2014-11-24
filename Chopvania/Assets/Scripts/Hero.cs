@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Hero : MonoBehaviour
 {
+	public GameObject lifebar;
 	float runSpeed = 8f;
 	float climbSpeed = 5f;
 	public float hurtSpeed = -2f;
@@ -22,15 +23,22 @@ public class Hero : MonoBehaviour
 	Animator animator;
 
 	//Weapon List
-	int weaponType = 1;
+	int weaponType = 0;
 	int Ammo = 0;
 	int weaponsClose = 0;
 	bool canDrop = false;
 	float dropTimer = 0.5f;
-	public GameObject bar;
-	public GameObject knife;
+	public GameObject footObj;
+	public GameObject barObj;
+	public GameObject droppedBar;
+	public GameObject knifeObj;
 	public GameObject droppedKnife;
 
+	//Animations
+	bool climbing = false;
+	bool attacking = false;
+	float move = 0f;
+	bool jumping = false;
 
 	void Awake()
 	{
@@ -51,11 +59,11 @@ public class Hero : MonoBehaviour
 	{
 		UpdateInvincibility();
 		Vector2 pointA = transform.position;
-		pointA += new Vector2(-boxCollider.size.x/2f, -boxCollider.size.y/2f);
+		pointA += new Vector2((-boxCollider.size.x/2f)*5f, (-boxCollider.size.y/2f)*5f);
 		Vector2 pointB = pointA;
-		pointB += new Vector2(boxCollider.size.x,  -0.1f);
+		pointB += new Vector2(boxCollider.size.x *5f,  -0.1f);
 		isGrounded = Physics2D.OverlapArea(pointA, pointB, groundMask);
-
+		jumping = !isGrounded;
 		if (isGrounded && !isLanded)
 		{
 			isLanded = true;
@@ -67,14 +75,17 @@ public class Hero : MonoBehaviour
 			return;
 		}
 		if (canClimb) {
-			float moveLadder = Input.GetAxis("Vertical");
-			if(moveLadder != 0){
+			float moveLadder = Input.GetAxis ("Vertical");
+			if (moveLadder != 0) {
 				rigidbody2D.gravityScale = 0;
-				rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, moveLadder * climbSpeed);
+				rigidbody2D.velocity = new Vector2 (rigidbody2D.velocity.x, moveLadder * climbSpeed);
+				climbing = true;
 			}
 		}
+		else
+			climbing = false;
 
-		float move = Input.GetAxis("Horizontal");
+		move = Input.GetAxis("Horizontal");
 		rigidbody2D.velocity = new Vector2(move * runSpeed, rigidbody2D.velocity.y);
 		if ((move > 0 && !isFacingRight) || (move < 0 && isFacingRight))
 			Flip();
@@ -90,17 +101,18 @@ public class Hero : MonoBehaviour
 		if (!isGrounded)
 			isLanded = false;
 		//Add for each weapon that has ammo, with 
-		if (Ammo == 0 && (weaponType != 1)) {
-			weaponType = 1;
-			animator.SetInteger("WeaponNumber", 1);
+		if (Ammo == 0 && (weaponType != 0)) {
+			weaponType = 0;
+			animator.SetInteger("WeaponNumber", 0);
 			canDrop = false;
 			}
 
-		if (Input.GetButtonDown ("Fire2") && weaponType != 1 && canDrop && isLanded && !canClimb && weaponsClose == 0) {
+		if (Input.GetButtonDown ("Fire2") && weaponType != 0 && canDrop && isLanded && !canClimb && weaponsClose == 0) {
 			DropWeapon ();
 			canDrop = false;
 		}
 		UpdateAttack();
+		UpdateAnimation ();
 	}
 
 
@@ -110,6 +122,7 @@ public class Hero : MonoBehaviour
 			return;
 		hurtTime = 0.5f;
 		invincibleTime = 2f;
+		lifebar.GetComponent<Lifemeter>().DecrementLife(damage);
 	}
 
 	void Flip()
@@ -163,6 +176,13 @@ public class Hero : MonoBehaviour
 		this.enabled = false;
 	}
 
+	void UpdateAnimation(){
+		animator.SetBool ("Climbing", climbing);
+		animator.SetBool ("Attacking", attacking);
+		animator.SetFloat ("Moving", Mathf.Abs (move));
+		animator.SetBool ("Jumping", jumping);
+	}
+
 	//Ladder Climbing
 	public void climbMode(){
 		canClimb = true;
@@ -176,11 +196,12 @@ public class Hero : MonoBehaviour
 
 	//Weapon Methods
 	public void weaponReset(){
-		animator.SetInteger ("WeaponNumber", weaponType);
+		attacking = false;
 	}
 
-	public void pickUpBar(){
+	public void pickUpBar(int ammo){
 		weaponType = 1;
+		Ammo = ammo;
 		animator.SetInteger ("WeaponNumber", weaponType);
 		Invoke ("canDropReset", dropTimer);
 	}
@@ -201,35 +222,35 @@ public class Hero : MonoBehaviour
 		attackDelay = Mathf.Max(0, attackDelay - Time.deltaTime);
 		if (Input.GetButtonDown("Fire1") && attackDelay <= 0.0f){
 			Quaternion rotater;
+			attacking = true;
 			switch(weaponType){
-			case 1:
-				Vector3 barPosition = transform.position + new Vector3(Orient (1.5f), -0.5f, 0);
-				animator.SetInteger ("WeaponNumber", 0);
-				if(isFacingRight)
-					rotater = Quaternion.Euler(0, 0, 180);
-				else
-					rotater = Quaternion.identity;
-				GameObject Bar = (GameObject)Instantiate(bar, barPosition, transform.rotation * rotater);
-				//Bar.rigidbody2D.velocity = rigidbody2D.velocity;
+			case 0:
+				Vector3 footPosition = transform.position + new Vector3(Orient (0.9f), -0.3f, 0);
+				GameObject Foot = (GameObject)Instantiate(footObj, footPosition, transform.rotation );
 				Invoke("weaponReset", 0.1f);
 				break;
 
+			case 1:
+				Vector3 barPosition = transform.position + new Vector3(Orient (1.5f), -0.5f, 0);
+				GameObject Bar = (GameObject)Instantiate(barObj, barPosition, transform.rotation);
+				Ammo--;
+				Invoke("weaponReset", 0.2f);
+				break;
 
 			case 2:
 				Vector3 knifePosition = transform.position + new Vector3(Orient (1.5f), -0.5f, 0);
-				animator.SetInteger ("WeaponNumber", 0);
 				if(!isFacingRight)
 					rotater = Quaternion.Euler(0, 0, 180);
 				else
 					rotater = Quaternion.identity;
 				
-				GameObject Knife = (GameObject)Instantiate(knife, knifePosition, transform.rotation * rotater);
+				GameObject Knife = (GameObject)Instantiate(knifeObj, knifePosition, transform.rotation * rotater);
 				if(isFacingRight)
 					Knife.rigidbody2D.AddForce(transform.right*800);
 				else
 					Knife.rigidbody2D.AddForce(-transform.right*800);
 				Ammo--;
-				Invoke("weaponReset", 0.5f);
+				Invoke("weaponReset", 0.2f);
 				break;
 			
 			}
@@ -238,18 +259,25 @@ public class Hero : MonoBehaviour
 	}
 
 	void DropWeapon(){
+		Vector3 weaponTransform = new Vector3 (transform.position.x, transform.position.y - 0.5f, transform.position.z);
 			switch(weaponType){
+			case 1:
+			GameObject Bar = (GameObject)Instantiate(droppedBar, weaponTransform , Quaternion.identity);
+				Bar.SendMessage ("setAmmo",Ammo);
+				Ammo = 0;
+				animator.SetInteger ("WeaponNumber", 0);
+				break;
 			case 2:
-				GameObject Knife = (GameObject)Instantiate(droppedKnife, new Vector3(transform.position.x,transform.position.y - 0.8f,transform.position.z) , Quaternion.identity);
+			GameObject Knife = (GameObject)Instantiate(droppedKnife, weaponTransform , Quaternion.identity);
 				Knife.SendMessage ("setAmmo",Ammo);
 				Ammo = 0;
-				animator.SetInteger ("WeaponNumber", 1);
+				animator.SetInteger ("WeaponNumber", 0);
 				break;
 			case 3:
-				GameObject Skillet = (GameObject)Instantiate(droppedKnife, new Vector3(transform.position.x,transform.position.y - 0.8f,transform.position.z) , Quaternion.identity);
+			GameObject Skillet = (GameObject)Instantiate(droppedKnife, weaponTransform , Quaternion.identity);
 				Skillet.SendMessage ("setAmmo",Ammo);
 				Ammo = 0;
-				animator.SetInteger ("WeaponNumber", 1);
+				animator.SetInteger ("WeaponNumber", 0);
 				break;
 			}
 	}

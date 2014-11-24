@@ -18,19 +18,10 @@ public class Cotainer : MonoBehaviour {
 			Instantiate(enemry, transform.position, Quaternion.identity);
 			Destroy(gameObject);
 		}
-		else if (collisionObject.tag == "PlayerBullet" /*&& collisionObject.GetComponent<PlayerBullet>().isActive*/)
+		else if (collisionObject.tag == "PlayerWeapon" /*&& collisionObject.GetComponent<PlayerBullet>().isActive*/)
 		{
-			collisionObject.SendMessage("Hit");
-			if (--life > 0)
-			{
-				
-			}
-			else
-			{
-				Instantiate(enemry, transform.position, Quaternion.identity);
-				Destroy(gameObject);
-				
-			}
+			Instantiate(enemry, transform.position, Quaternion.identity);
+			Destroy(gameObject);
 		}
 	}
 	
