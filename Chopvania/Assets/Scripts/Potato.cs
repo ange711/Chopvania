@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Potato : MonoBehaviour {
-
+	
 	public int health = 8;
 	public GameObject explosion;
 	GameObject player;
@@ -13,14 +13,14 @@ public class Potato : MonoBehaviour {
 	float jumpTimer = 0f;
 	float invincibleTime;
 	SpriteRenderer spriteRenderer;
-
+	
 	void Awake(){
 		boxcollider = GetComponent<BoxCollider2D>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		spriteRenderer = GetComponent<SpriteRenderer>();
-
+		
 	}
-
+	
 	void Update () {
 		UpdateHit ();
 		if(idle && Mathf.Abs(player.transform.position.x - transform.position.x) < 15f){
@@ -29,7 +29,7 @@ public class Potato : MonoBehaviour {
 			GetComponent<Animator>().SetBool("isAngry", true);
 			gameObject.AddComponent<Rigidbody2D>();
 		}
-
+		
 		if(!idle){
 			Vector2 direction = player.transform.position - transform.position;
 			rigidbody2D.AddForce (new Vector2((direction.normalized).x * speed, 0f));
@@ -39,9 +39,9 @@ public class Potato : MonoBehaviour {
 				jumpTimer= 1.0f;
 			}
 		}
-
+		
 	}
-
+	
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon"){
@@ -56,15 +56,16 @@ public class Potato : MonoBehaviour {
 				var explode = (GameObject) Instantiate(explosion, wall, Quaternion.identity);
 				explode.transform.localScale = new Vector3(9.0f, 9.0f, 2.0f);
 				walls.AddComponent("TimedDeath");
+				walls.GetComponent<TimedDeath>().lifeTime = 1f;
 				Instantiate(explosion, transform.position, Quaternion.identity);
 			}
 		}
-
+		
 		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero>().IsInvincible()){
 			collisionObject.SendMessage("ApplyDamage", damage);
 		}
 	}
-
+	
 	void UpdateHit()
 	{
 		invincibleTime = Mathf.Max(0, invincibleTime - Time.deltaTime);

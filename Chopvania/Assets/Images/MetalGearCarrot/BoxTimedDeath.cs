@@ -9,7 +9,7 @@ public class BoxTimedDeath : MonoBehaviour {
 	
 	void Awake(){
 		spriteRenderer = GetComponent<SpriteRenderer>();
-		MGCarrot = GameObject.Find("MGC");
+		MGCarrot = GameObject.Find("MetalGearCarrot");
 	}
 
 	void Update()

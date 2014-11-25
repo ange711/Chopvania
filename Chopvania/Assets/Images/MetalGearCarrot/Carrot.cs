@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Carrot : MonoBehaviour {
 
-	int damage = 1;
+	int damage = 2;
 
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;		

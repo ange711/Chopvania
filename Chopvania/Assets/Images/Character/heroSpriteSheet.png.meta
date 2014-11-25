@@ -1,6 +1,38 @@
 fileFormatVersion: 2
 guid: 2349aa386eda96a498b5806338418f06
 TextureImporter:
+  fileIDToRecycleName:
+    21300000: heroSpriteSheet_0
+    21300002: heroSpriteSheet_1
+    21300004: heroSpriteSheet_2
+    21300006: heroSpriteSheet_3
+    21300008: heroSpriteSheet_4
+    21300010: heroSpriteSheet_5
+    21300012: heroSpriteSheet_6
+    21300014: heroSpriteSheet_7
+    21300016: heroSpriteSheet_8
+    21300018: heroSpriteSheet_9
+    21300020: heroSpriteSheet_10
+    21300022: heroSpriteSheet_11
+    21300024: heroSpriteSheet_12
+    21300026: heroSpriteSheet_13
+    21300028: heroSpriteSheet_14
+    21300030: heroSpriteSheet_15
+    21300032: heroSpriteSheet_16
+    21300034: heroSpriteSheet_17
+    21300036: heroSpriteSheet_18
+    21300038: heroSpriteSheet_19
+    21300040: heroSpriteSheet_20
+    21300042: heroSpriteSheet_21
+    21300044: heroSpriteSheet_22
+    21300046: heroSpriteSheet_23
+    21300048: heroSpriteSheet_24
+    21300050: heroSpriteSheet_25
+    21300052: heroSpriteSheet_26
+    21300054: heroSpriteSheet_27
+    21300056: heroSpriteSheet_28
+    21300058: heroSpriteSheet_29
+    21300060: heroSpriteSheet_30
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0

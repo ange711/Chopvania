@@ -9,6 +9,9 @@ GameObject:
   m_Component:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
+  - 61: {fileID: 6100000}
+  - 114: {fileID: 11400000}
+  - 114: {fileID: 11400002}
   m_Layer: 0
   m_Name: pile
   m_TagString: Untagged
@@ -23,11 +26,47 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 17.2437878, y: -2.33960366, z: -2}
-  m_LocalScale: {x: .744107723, y: .744107306, z: 1}
+  m_LocalPosition: {x: 9.80256462, y: -.868157446, z: -2}
+  m_LocalScale: {x: 1.19622648, y: 1.196226, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!61 &6100000
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Size: {x: .5, y: .699999988}
+  m_Center: {x: -.100000001, y: -.300000012}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0951ec93c6cf2304cab5150dcd5f0283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelName: bossRoom
+--- !u!114 &11400002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4f5af2d4b754d2446a86f15752b5a12e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lifeTime: 4
+  arrow: {fileID: 100000, guid: 4e537e52589d7f54f9c32187347d4b1a, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
