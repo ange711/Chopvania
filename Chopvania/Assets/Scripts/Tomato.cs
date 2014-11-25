@@ -35,7 +35,7 @@ public class Tomato : MonoBehaviour{
 			rigidbody2D.AddForce (direction.normalized * speed);
 			transform.localRotation *= Quaternion.Euler (0f, 0f, 10f);
 		}
-		if (Mathf.Abs (transform.position.x - player.transform.position.x) < (boxcollider.size.x/1.5f)) {
+		if (Mathf.Abs (transform.position.x - player.transform.position.x) < 1.5) {
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy (gameObject);
 		}
