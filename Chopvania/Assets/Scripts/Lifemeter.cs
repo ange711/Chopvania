@@ -33,7 +33,7 @@ public class Lifemeter : MonoBehaviour
 
 	public int IncrementLife(int amount)
 	{
-		life = Mathf.Min(9, life + amount);
+		life = Mathf.Min(10, life + amount);
 		UpdateBars();
 		return life;
 	}

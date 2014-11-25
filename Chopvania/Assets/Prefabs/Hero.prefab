@@ -27,7 +27,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7360034, y: -3.7650435, z: 0}
+  m_LocalPosition: {x: -26.9283676, y: -4.29689169, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -72,7 +72,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -99,6 +98,19 @@ MonoBehaviour:
   droppedBar: {fileID: 100000, guid: fa9aeb95aa3da2044adb4c88e0af94bd, type: 2}
   knifeObj: {fileID: 100000, guid: 39be87af51a32224eb48862537fb8df4, type: 2}
   droppedKnife: {fileID: 100000, guid: 79e7fc01c8e9ff443a94cc1263050a22, type: 2}
+  skilletObj: {fileID: 0}
+  droppedSkillet: {fileID: 0}
+  TURKEYObj: {fileID: 0}
+  droppedTURKEY: {fileID: 0}
+  donePie: {fileID: 0}
+  death: {fileID: 0}
+  eat: {fileID: 0}
+  kick: {fileID: 0}
+  hurt: {fileID: 0}
+  jump: {fileID: 0}
+  Run: {fileID: 0}
+  smack: {fileID: 0}
+  throwing: {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

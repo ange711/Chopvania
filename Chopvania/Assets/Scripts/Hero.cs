@@ -22,6 +22,8 @@ public class Hero : MonoBehaviour
 	bool isLanded = false;
 	Animator animator;
 
+	int health = 10;
+
 	//Weapon List
 	int weaponType = 0;
 	int Ammo = 0;
@@ -33,12 +35,29 @@ public class Hero : MonoBehaviour
 	public GameObject droppedBar;
 	public GameObject knifeObj;
 	public GameObject droppedKnife;
+	public GameObject skilletObj;
+	public GameObject droppedSkillet;
+	public GameObject TURKEYObj;
+	public GameObject droppedTURKEY;
 
 	//Animations
 	bool climbing = false;
 	bool attacking = false;
 	float move = 0f;
 	bool jumping = false;
+	bool eatPie = false;
+
+	//Sounds
+	public AudioSource donePie;
+	public AudioSource death;
+	public AudioSource eat;
+	public AudioSource kick;
+	public AudioSource hurt;
+	public AudioSource jump;
+	public AudioSource Run;
+	public AudioSource smack;
+	public AudioSource throwing;
+
 
 	void Awake()
 	{
@@ -57,7 +76,7 @@ public class Hero : MonoBehaviour
 
 	void Update()
 	{
-		UpdateInvincibility();
+
 		Vector2 pointA = transform.position;
 		pointA += new Vector2((-boxCollider.size.x/2f)*5f, (-boxCollider.size.y/2f)*5f);
 		Vector2 pointB = pointA;
@@ -111,8 +130,10 @@ public class Hero : MonoBehaviour
 			DropWeapon ();
 			canDrop = false;
 		}
+
 		UpdateAttack();
 		UpdateAnimation ();
+		UpdateInvincibility();
 	}
 
 
@@ -122,6 +143,7 @@ public class Hero : MonoBehaviour
 			return;
 		hurtTime = 0.5f;
 		invincibleTime = 2f;
+		health -= damage;
 		lifebar.GetComponent<Lifemeter>().DecrementLife(damage);
 	}
 
@@ -181,6 +203,18 @@ public class Hero : MonoBehaviour
 		animator.SetBool ("Attacking", attacking);
 		animator.SetFloat ("Moving", Mathf.Abs (move));
 		animator.SetBool ("Jumping", jumping);
+		animator.SetBool ("GotPie", eatPie);
+	}
+
+	public void EatPie(){
+		eatPie = true;
+		health += 2;
+		lifebar.GetComponent<Lifemeter>().IncrementLife(2);
+		Invoke ("PieReseter", 0.25f);
+	}
+
+	public void PieReseter(){
+		eatPie = false;
 	}
 
 	//Ladder Climbing
