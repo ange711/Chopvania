@@ -8,7 +8,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  - 212: {fileID: 21200000}
   - 61: {fileID: 6100000}
   - 50: {fileID: 5000000}
   - 114: {fileID: 11400004}
@@ -28,9 +27,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
-  m_LocalRotation: {x: 0, y: 0, z: -.0436193869, w: .999048233}
-  m_LocalPosition: {x: 169.209991, y: -4.50084686, z: 0}
-  m_LocalScale: {x: 1.13943541, y: 1.13943708, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -.4226183, w: .906307817}
+  m_LocalPosition: {x: -28.7578468, y: -.821418345, z: 0}
+  m_LocalScale: {x: .699999988, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -62,7 +61,7 @@ BoxCollider2D:
   m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -74,7 +73,7 @@ MonoBehaviour:
   isOnFloor: 0
 --- !u!114 &11400002
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
@@ -108,29 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 73d1960b1bbf75a4c87cab35e4fa9edc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: .100000001
---- !u!212 &21200000
-SpriteRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_CastShadows: 0
-  m_ReceiveShadows: 0
-  m_LightmapIndex: 255
-  m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
-  m_Materials:
-  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 0
-  m_LightProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d807ba0834aafc04d9db4248d66835d3, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  lifeTime: .200000003
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

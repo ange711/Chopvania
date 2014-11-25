@@ -260,14 +260,20 @@ public class Hero : MonoBehaviour
 			switch(weaponType){
 			case 0:
 				Vector3 footPosition = transform.position + new Vector3(Orient (0.9f), -0.3f, 0);
-				GameObject Foot = (GameObject)Instantiate(footObj, footPosition, transform.rotation );
+				GameObject Foot = (GameObject)Instantiate(footObj, footPosition, transform.rotation);
+				Foot.rigidbody2D.velocity = rigidbody2D.velocity;
 				Invoke("weaponReset", 0.1f);
 				break;
 
 			case 1:
-				Vector3 barPosition = transform.position + new Vector3(Orient (1.5f), -0.5f, 0);
-				GameObject Bar = (GameObject)Instantiate(barObj, barPosition, transform.rotation);
+				Vector3 barPosition = transform.position + new Vector3(Orient (0.9f), 0.2f, 0);
+				if(isFacingRight)
+					rotater = Quaternion.Euler(0, 0, 50);
+				else
+					rotater = Quaternion.identity;
+				GameObject Bar = (GameObject)Instantiate(barObj, barPosition, transform.rotation * Quaternion.Euler(0f, 0f, -30f) * rotater);
 				Ammo--;
+				Bar.rigidbody2D.velocity = rigidbody2D.velocity;
 				Invoke("weaponReset", 0.2f);
 				break;
 

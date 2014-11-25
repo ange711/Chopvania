@@ -25,14 +25,14 @@ public class Knife : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player")
+		if (collisionObject.tag == "Player" && isOnFloor)
 			collisionObject.SendMessage ("weaponInRange");
 	}
-
+	
 	void OnTriggerExit2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player")
+		if (collisionObject.tag == "Player" && isOnFloor)
 			collisionObject.SendMessage ("weaponOutOfRange");
 	}
 
