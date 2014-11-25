@@ -10,7 +10,7 @@ public class Skillet : MonoBehaviour
 	void Awake(){
 		boxcollider = GetComponent<BoxCollider2D>();
 		if (!isOnFloor) {
-			Invoke ("Shield", 0.1f);
+			Invoke ("Shield", 0.2f);
 		}
 
 	}
@@ -19,7 +19,7 @@ public class Skillet : MonoBehaviour
 	{
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Player" && isOnFloor && Input.GetButtonDown("Fire2")){
-			if(collisionObject.GetComponent<Hero>().getWeaponsCloseBy () == 1 && collisionObject.GetComponent<Hero>().getWeaponType () == 1){
+			if(collisionObject.GetComponent<Hero>().getWeaponsCloseBy () == 1 && collisionObject.GetComponent<Hero>().getWeaponType () == 0){
 				collisionObject.SendMessage ("pickUpSkillet", Ammo);
 				collisionObject.SendMessage ("weaponOutOfRange");
 				Destroy(gameObject);
@@ -33,14 +33,14 @@ public class Skillet : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player")
+		if (collisionObject.tag == "Player" && isOnFloor)
 			collisionObject.SendMessage ("weaponInRange");
 	}
 	
 	void OnTriggerExit2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player")
+		if (collisionObject.tag == "Player" && isOnFloor)
 			collisionObject.SendMessage ("weaponOutOfRange");
 	}
 	
@@ -50,6 +50,7 @@ public class Skillet : MonoBehaviour
 
 	void Shield(){
 		boxcollider.isTrigger = false;
+		gameObject.tag = "SkilletWall";
 	}
 
 	

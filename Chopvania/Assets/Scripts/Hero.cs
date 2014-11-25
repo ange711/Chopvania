@@ -46,6 +46,7 @@ public class Hero : MonoBehaviour
 	float move = 0f;
 	bool jumping = false;
 	bool eatPie = false;
+	bool skilletStasis = false;
 
 	//Sounds
 	public AudioSource donePie;
@@ -71,9 +72,6 @@ public class Hero : MonoBehaviour
 		Flip();
 	}
 
-
-	
-
 	void Update()
 	{
 
@@ -93,7 +91,7 @@ public class Hero : MonoBehaviour
 			rigidbody2D.velocity = new Vector2(Orient(hurtSpeed), 0);
 			return;
 		}
-		if (canClimb) {
+		if (canClimb && !skilletStasis) {
 			float moveLadder = Input.GetAxis ("Vertical");
 			if (moveLadder != 0) {
 				rigidbody2D.gravityScale = 0;
@@ -103,12 +101,12 @@ public class Hero : MonoBehaviour
 		}
 		else
 			climbing = false;
-
-		move = Input.GetAxis("Horizontal");
+		if(!skilletStasis)
+			move = Input.GetAxis("Horizontal");
 		rigidbody2D.velocity = new Vector2(move * runSpeed, rigidbody2D.velocity.y);
 		if ((move > 0 && !isFacingRight) || (move < 0 && isFacingRight))
 			Flip();
-		if (isGrounded && Input.GetButtonDown("Jump"))
+		if (isGrounded && Input.GetButtonDown("Jump") && !skilletStasis)
 		{
 			rigidbody2D.gravityScale = 3;
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
@@ -134,6 +132,7 @@ public class Hero : MonoBehaviour
 		UpdateAttack();
 		UpdateAnimation ();
 		UpdateInvincibility();
+		UpdateSkilletStasis ();
 	}
 
 
@@ -158,6 +157,17 @@ public class Hero : MonoBehaviour
 	float Orient(float value)
 	{
 		return isFacingRight ? value : -value;
+	}
+
+	void UpdateSkilletStasis(){
+		if (skilletStasis) {
+			rigidbody2D.velocity = Vector3.zero;
+			if (Input.GetButtonUp("Fire1")){
+				skilletStasis = false;
+				Invoke("weaponReset", 0.4f);
+				Destroy (GameObject.FindGameObjectWithTag("SkilletWall"));
+			}
+		}
 	}
 
 	void UpdateInvincibility()
@@ -247,6 +257,13 @@ public class Hero : MonoBehaviour
 		Invoke ("canDropReset", dropTimer);
 	}
 
+	public void pickUpSkillet(int ammo){
+		weaponType = 3;
+		Ammo = ammo;
+		animator.SetInteger ("WeaponNumber", weaponType);
+		Invoke ("canDropReset", dropTimer);
+	}
+
 	void canDropReset(){
 		canDrop = true;
 	}
@@ -292,7 +309,18 @@ public class Hero : MonoBehaviour
 				Ammo--;
 				Invoke("weaponReset", 0.2f);
 				break;
-			
+
+			case 3:
+				Vector3 skilletPosition = transform.position + new Vector3(Orient (.8f), 0f, 0);
+				if(!isFacingRight)
+					rotater = Quaternion.Euler(0, 0, 180);
+				else
+					rotater = Quaternion.identity;
+				
+				GameObject Skillet = (GameObject)Instantiate(skilletObj, skilletPosition, transform.rotation * rotater);
+				Ammo--;
+				skilletStasis = true;
+				break;
 			}
 			attackDelay = 0.5f;
 		}
