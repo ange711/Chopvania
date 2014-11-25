@@ -22,9 +22,9 @@ public class BossCamera : MonoBehaviour
 		}
 		
 		if(zoomedOut){
-			Vector3 newPos = new Vector3(10.08626f, -33.05487f, -10f);
+			Vector3 newPos = new Vector3(7.91263f, -25.15001f, -10f);
 			transform.position = Vector3.SmoothDamp(transform.position, newPos, ref velocity, dampTime);
-			float size = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, 16.95697f, ref vel, dampTime);
+			float size = Mathf.SmoothDamp(GetComponent<Camera>().orthographicSize, 24.68899f, ref vel, dampTime);
 			GetComponent<Camera>().orthographicSize = size;
 		}
 	}
