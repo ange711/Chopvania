@@ -85,7 +85,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebar: {fileID: 0}
   hurtSpeed: -2
-  jumpForce: 700
+  jumpForce: 600
   groundMask:
     serializedVersion: 2
     m_Bits: 256
@@ -93,6 +93,7 @@ MonoBehaviour:
   isFacingRight: 1
   hurtTime: 0
   invincibleTime: 0
+  currentLevel: 
   footObj: {fileID: 100000, guid: f3a37e71155dc5e4aa2b58fadd07201f, type: 2}
   barObj: {fileID: 100000, guid: d850bc9e15cd3fd4dab8879756fc893f, type: 2}
   droppedBar: {fileID: 100000, guid: fa9aeb95aa3da2044adb4c88e0af94bd, type: 2}

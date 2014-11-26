@@ -3,25 +3,10 @@ using System.Collections;
 
 public class Ladder : MonoBehaviour
 {
-	//bool isNearPlayer = false;
-	//float activeTime = 2f;
-	bool isActive;
-	//bool timerFlag;
-	//Animator animator;
-	//GameObject player;
-	
-	void Awake()
-	{
-		//animator = GetComponent<Animator>();
-		//player = GameObject.FindGameObjectWithTag("Player");
-		isActive = true;
-		//timerFlag = false;
-	}
-	
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player" && isActive)
+		if (collisionObject.tag == "Player")
 		{
 			collisionObject.SendMessage("climbMode");
 		}
@@ -30,7 +15,7 @@ public class Ladder : MonoBehaviour
 	void OnTriggerExit2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player" && isActive)
+		if (collisionObject.tag == "Player")
 		{
 			collisionObject.SendMessage("climbOff");
 		}

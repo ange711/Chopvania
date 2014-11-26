@@ -56,11 +56,11 @@ public class MGCarrot : MonoBehaviour {
 				Vector2 position = new Vector2(transform.position.x, transform.position.y + 2.5f);
 				Instantiate(explosion, position, Quaternion.identity);
 				if(currentPos == 1){
-					Instantiate (dirtPile, grass1.transform.position, Quaternion.identity);
+					Instantiate (dirtPile, grass1.transform.position - new Vector3(0, 1f, 0), Quaternion.identity);
 					Destroy (grass1);
 				}
 				if(currentPos == 2){
-					Instantiate (dirtPile, grass2.transform.position, Quaternion.identity);
+					Instantiate (dirtPile, grass2.transform.position - new Vector3(0, 1f, 0), Quaternion.identity);
 					Destroy (grass2);
 				}
 

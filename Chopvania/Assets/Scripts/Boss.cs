@@ -33,12 +33,12 @@ public class Boss : MonoBehaviour {
 		if (Mathf.Abs (player.transform.position.x - transform.position.x) < 10f) 
 		{
 			idle = false;
-			GetComponent<Animator> ().SetBool ("playerClose", true);
+			//GetComponent<Animator> ().SetBool ("playerClose", true);
 			damageable = true;
 		}
 		else 
 		{
-			GetComponent<Animator> ().SetBool ("playerClose", false);
+			//GetComponent<Animator> ().SetBool ("playerClose", false);
 			damageable = false;
 		}
 		
