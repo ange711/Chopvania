@@ -12,6 +12,7 @@ public class Onion : MonoBehaviour {
 	float shootingTime = 2.0f;
 	float reverseTime = 2.5f;
 	public GameObject explosion;
+	int health = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -85,7 +86,10 @@ public class Onion : MonoBehaviour {
 		else if (collisionObject.tag == "PlayerWeapon")
 		{
 			Instantiate(explosion, transform.position, Quaternion.identity);
-			Destroy(gameObject);
+			--health;
+			if(health == 0){
+				Destroy(gameObject);
+			}
 		}
 	}
 }

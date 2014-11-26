@@ -12,6 +12,7 @@ public class mainMenu : MonoBehaviour {
     bool instructSelect;
     bool showInstruct;
     bool exitSelect;
+	bool pressed = false;
 
 
     public GUIText _exit;
@@ -64,7 +65,7 @@ public class mainMenu : MonoBehaviour {
         updateColour();
 
 
-          if(Input.GetKey(KeyCode.Return))
+          if(Input.GetButtonDown("Jump"))
           {
               if (_startSelected == true)
               {

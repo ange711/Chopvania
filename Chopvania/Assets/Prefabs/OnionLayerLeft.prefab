@@ -10,8 +10,8 @@ GameObject:
   - 4: {fileID: 400000}
   - 212: {fileID: 21200000}
   - 114: {fileID: 11400000}
-  - 60: {fileID: 6000000}
   - 50: {fileID: 5000000}
+  - 61: {fileID: 6100000}
   m_Layer: 0
   m_Name: OnionLayerLeft
   m_TagString: Untagged
@@ -26,7 +26,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 203.07695, y: -4.60407639, z: 0}
+  m_LocalPosition: {x: -21.7597599, y: -9.1807251, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -46,8 +46,8 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
---- !u!60 &6000000
-PolygonCollider2D:
+--- !u!61 &6100000
+BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -55,25 +55,8 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Poly:
-    m_Paths:
-    - - {x: 0, y: -.125}
-      - {x: .0900000036, y: .215000004}
-      - {x: .129999995, y: .245000005}
-      - {x: .170000002, y: .284999996}
-      - {x: .200000003, y: .465000004}
-      - {x: .200000003, y: .474999994}
-      - {x: .119999997, y: .555000007}
-      - {x: .0700000003, y: .564999998}
-      - {x: .0399999991, y: .535000026}
-      - {x: -.209999993, y: .155000001}
-      - {x: -.209999993, y: -.204999998}
-      - {x: -.129999995, y: -.354999989}
-      - {x: -.00999999978, y: -.564999998}
-      - {x: .129999995, y: -.564999998}
-      - {x: .209999993, y: -.555000007}
-      - {x: .209999993, y: -.444999993}
-      - {x: .0700000003, y: -.275000006}
+  m_Size: {x: .219999999, y: 1.13}
+  m_Center: {x: 0, y: 0}
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 1

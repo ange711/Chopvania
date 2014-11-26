@@ -21,8 +21,9 @@ public class Hero : MonoBehaviour
 	SpriteRenderer spriteRenderer;
 	bool isLanded = false;
 	Animator animator;
-
 	int health = 10;
+
+	public string currentLevel;
 
 	//Weapon List
 	int weaponType = 0;
@@ -47,6 +48,7 @@ public class Hero : MonoBehaviour
 	bool jumping = false;
 	bool eatPie = false;
 	bool skilletStasis = false;
+	bool died = false;
 
 	//Sounds
 	public AudioSource donePie;
@@ -91,7 +93,7 @@ public class Hero : MonoBehaviour
 			rigidbody2D.velocity = new Vector2(Orient(hurtSpeed), 0);
 			return;
 		}
-		if (canClimb && !skilletStasis) {
+		if (canClimb) {
 			float moveLadder = Input.GetAxis ("Vertical");
 			if (moveLadder != 0) {
 				rigidbody2D.gravityScale = 0;
@@ -113,6 +115,7 @@ public class Hero : MonoBehaviour
 		}
 		else if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0)
 		{
+			jump.Play ();
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
 		}
 		if (!isGrounded)
@@ -128,7 +131,8 @@ public class Hero : MonoBehaviour
 			DropWeapon ();
 			canDrop = false;
 		}
-
+		if (health == 0)
+			Die ();
 		UpdateAttack();
 		UpdateAnimation ();
 		UpdateInvincibility();
@@ -144,6 +148,7 @@ public class Hero : MonoBehaviour
 		invincibleTime = 2f;
 		health -= damage;
 		lifebar.GetComponent<Lifemeter>().DecrementLife(damage);
+		hurt.Play ();
 	}
 
 	void Flip()
@@ -172,18 +177,17 @@ public class Hero : MonoBehaviour
 
 	void UpdateInvincibility()
 	{
-		invincibleTime = Mathf.Max(0, invincibleTime - Time.deltaTime);
-		Color nextColor = spriteRenderer.color;
-		if (invincibleTime > 0)
-		{
-			bool isFlashStrong = ((int)(invincibleTime * 15) %2) == 0;
-			nextColor.a = isFlashStrong ? 0.75f : 0.25f;
+		if (health != 0) {
+			invincibleTime = Mathf.Max (0, invincibleTime - Time.deltaTime);
+			Color nextColor = spriteRenderer.color;
+			if (invincibleTime > 0) {
+				bool isFlashStrong = ((int)(invincibleTime * 15) % 2) == 0;
+				nextColor.a = isFlashStrong ? 0.75f : 0.25f;
+			} else {
+				nextColor.a = 1f;
+			}
+			spriteRenderer.color = nextColor;
 		}
-		else
-		{
-			nextColor.a = 1f;
-		}
-		spriteRenderer.color = nextColor;
 	}
 
 
@@ -203,9 +207,15 @@ public class Hero : MonoBehaviour
 	public void Die()
 	{
 		isAlive = false;
-		spriteRenderer.enabled = false;
+		died = true;
 		rigidbody2D.velocity = Vector2.zero;
 		this.enabled = false;
+		Invoke("reload", 2);
+		death.Play ();
+	}
+
+	void reload(){
+		Application.LoadLevel(currentLevel);
 	}
 
 	void UpdateAnimation(){
@@ -214,6 +224,7 @@ public class Hero : MonoBehaviour
 		animator.SetFloat ("Moving", Mathf.Abs (move));
 		animator.SetBool ("Jumping", jumping);
 		animator.SetBool ("GotPie", eatPie);
+		animator.SetBool ("Dead", died);
 	}
 
 	public void EatPie(){
@@ -221,9 +232,11 @@ public class Hero : MonoBehaviour
 		health += 2;
 		lifebar.GetComponent<Lifemeter>().IncrementLife(2);
 		Invoke ("PieReseter", 0.25f);
+		eat.Play ();
 	}
 
 	public void PieReseter(){
+		donePie.Play ();
 		eatPie = false;
 	}
 
@@ -308,6 +321,7 @@ public class Hero : MonoBehaviour
 					Knife.rigidbody2D.AddForce(-transform.right*800);
 				Ammo--;
 				Invoke("weaponReset", 0.2f);
+				throwing.Play ();
 				break;
 
 			case 3:
@@ -322,7 +336,7 @@ public class Hero : MonoBehaviour
 				skilletStasis = true;
 				break;
 			}
-			attackDelay = 0.5f;
+			attackDelay = 0.7f;
 		}
 	}
 

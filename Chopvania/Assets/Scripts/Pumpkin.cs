@@ -5,6 +5,7 @@ public class Pumpkin : MonoBehaviour
 {
 
 	int damage = 1;
+	int health = 2;
 	bool isActive = true;
 	CircleCollider2D circlecollider;
 	public GameObject pumpkinParticle;
@@ -23,11 +24,14 @@ public class Pumpkin : MonoBehaviour
 		}
 		
 		if(collisionObject.tag == "PlayerWeapon"){
-			GameObject chips = (GameObject)Instantiate(pumpkinParticle, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
-			circlecollider.isTrigger = false;
-			rigidbody2D.gravityScale = 10f;
-			isActive = false;
-			GetComponent<Animator>().SetBool("isDead", true);
+			health--;
+			if(health == 0){
+				GameObject chips = (GameObject)Instantiate(pumpkinParticle, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
+				circlecollider.isTrigger = false;
+				rigidbody2D.gravityScale = 10f;
+				isActive = false;
+				GetComponent<Animator>().SetBool("isDead", true);
+			}
 		}
 	}
 
