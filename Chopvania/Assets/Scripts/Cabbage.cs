@@ -43,6 +43,7 @@ public class Cabbage : MonoBehaviour
 			activeTime = activeTime - Time.deltaTime;
 			if(activeTime <= 0f){
 				isActive = true;
+				animator.SetBool ("Active", true);
 				activeTime = 2f; //dangerous time length
 			}
 		}
@@ -67,6 +68,7 @@ public class Cabbage : MonoBehaviour
 		isActive = false;
 		activeTime = 5f; //idle time length
 		timerFlag = false;
+		animator.SetBool ("Active", false);
 		animator.SetBool ("IsNearPlayer", false);
 	}
 

@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\Fallings.cs" />
      <Compile Include="Assets\Scripts\Fire.cs" />
      <Compile Include="Assets\Scripts\FireWalls.cs" />
+     <Compile Include="Assets\Scripts\HandPrint.cs" />
      <Compile Include="Assets\Scripts\Hero.cs" />
      <Compile Include="Assets\Scripts\Ice_path.cs" />
      <Compile Include="Assets\Scripts\Knife.cs" />
