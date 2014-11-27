@@ -28,7 +28,7 @@ public class Hero : MonoBehaviour
 	//Weapon List
 	int weaponType = 0;
 	int Ammo = 0;
-	int weaponsClose = 0;
+	public int weaponsClose = 0;
 	bool canDrop = false;
 	float dropTimer = 0.5f;
 	public GameObject footObj;
@@ -38,8 +38,6 @@ public class Hero : MonoBehaviour
 	public GameObject droppedKnife;
 	public GameObject skilletObj;
 	public GameObject droppedSkillet;
-	public GameObject TURKEYObj;
-	public GameObject droppedTURKEY;
 
 	//Animations
 	bool climbing = false;
@@ -131,8 +129,13 @@ public class Hero : MonoBehaviour
 			DropWeapon ();
 			canDrop = false;
 		}
+
 		if (health == 0)
 			Die ();
+
+		if (weaponsClose < 0)
+			weaponsClose = 0;
+
 		UpdateAttack();
 		UpdateAnimation ();
 		UpdateInvincibility();
@@ -241,7 +244,7 @@ public class Hero : MonoBehaviour
 	}
 
 	//Ladder Climbing
-	public void climbMode(){
+	public void climbOn(){
 		canClimb = true;
 	}
 

@@ -4,11 +4,7 @@ using System.Collections;
 public class OnionLayer : MonoBehaviour
 {
 	public int damage = 1;
-
-	void Start () {
-		Destroy(gameObject, 5f);
-	}
-	
+		
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
@@ -17,5 +13,7 @@ public class OnionLayer : MonoBehaviour
 			collisionObject.SendMessage("ApplyDamage", damage);
 			Destroy(gameObject);
 		}
+		else
+			Destroy(gameObject);
 	}
 }

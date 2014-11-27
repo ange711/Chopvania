@@ -29,7 +29,7 @@ public class Tomato : MonoBehaviour{
 	}
 
 	void Update(){
-		isNearPlayer = Mathf.Abs(transform.position.x - player.transform.position.x) < 8f;
+		isNearPlayer = Mathf.Abs(Vector2.Distance (transform.position, player.transform.position)) < 8f;
 		if (isNearPlayer) {
 			var direction = player.transform.position - transform.position;
 			rigidbody2D.AddForce (direction.normalized * speed);

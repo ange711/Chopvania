@@ -8,7 +8,7 @@ public class Ladder : MonoBehaviour
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Player")
 		{
-			collisionObject.SendMessage("climbMode");
+			collisionObject.SendMessage("climbOn");
 		}
 	}
 

@@ -25,9 +25,6 @@ public class Skillet : MonoBehaviour
 				Destroy(gameObject);
 			}
 		}
-		if (collisionObject.tag != "Player" && collisionObject.tag != "Ladder" && !isOnFloor){
-			Destroy(gameObject);
-		}
 	}
 	
 	void OnTriggerEnter2D(Collider2D col)
