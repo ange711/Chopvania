@@ -12,8 +12,8 @@ TagManager:
   - Wall
   - Breakable
   - Water
-  - 
-  - 
+  - SkilletWall
+  - FloorWeapon
   - 
   - ExplodingWall
   - 

@@ -74,14 +74,17 @@ public class Boss : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon" && damageable){
-			--health;
+			health--;
 			invincibleTime = 0.5f;
-			if(health == 0){
-				Instantiate(explosion, transform.position, Quaternion.identity);
-				Destroy(gameObject);
-			}
 		}
-		
+		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
+			health--;
+			invincibleTime = 0.5f;
+		}
+		if(health == 0){
+			Instantiate(explosion, transform.position, Quaternion.identity);
+			Destroy(gameObject);
+		}
 		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero>().IsInvincible()){
 			collisionObject.SendMessage("ApplyDamage", damage);
 		}

@@ -25,13 +25,18 @@ public class Pumpkin : MonoBehaviour
 		
 		if(collisionObject.tag == "PlayerWeapon"){
 			health--;
-			if(health == 0){
-				GameObject chips = (GameObject)Instantiate(pumpkinParticle, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
-				circlecollider.isTrigger = false;
-				rigidbody2D.gravityScale = 10f;
-				isActive = false;
-				GetComponent<Animator>().SetBool("isDead", true);
-			}
+			GameObject chips = (GameObject)Instantiate(pumpkinParticle, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
+		}
+		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
+			health--;
+			GameObject chips = (GameObject)Instantiate(pumpkinParticle, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
+		}
+		if(health == 0){
+			GameObject chips = (GameObject)Instantiate(pumpkinParticle, new Vector3(transform.position.x, transform.position.y, -2f), Quaternion.identity);
+			circlecollider.isTrigger = false;
+			rigidbody2D.gravityScale = 10f;
+			isActive = false;
+			GetComponent<Animator>().SetBool("isDead", true);
 		}
 	}
 

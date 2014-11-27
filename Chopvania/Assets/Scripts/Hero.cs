@@ -72,6 +72,7 @@ public class Hero : MonoBehaviour
 		Flip();
 	}
 
+
 	void Update()
 	{
 

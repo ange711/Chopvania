@@ -47,7 +47,10 @@ public class Skillet : MonoBehaviour
 
 	void Shield(){
 		boxcollider.isTrigger = false;
-		gameObject.tag = "SkilletWall";
+	}
+
+	public bool getCollider(){
+		return boxcollider.isTrigger;
 	}
 
 	

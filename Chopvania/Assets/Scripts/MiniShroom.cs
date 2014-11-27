@@ -17,8 +17,11 @@ public class MiniShroom : MonoBehaviour {
 	
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "PlayerWeapon" || collisionObject.tag == "Wall"){
+		if (collisionObject.tag == "PlayerWeapon"){
 			Destroy(gameObject);
+		}
+		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
+			Destroy (gameObject);
 		}
 		if (collisionObject.tag == "Player") 
 		{

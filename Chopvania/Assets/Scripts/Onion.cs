@@ -80,13 +80,17 @@ public class Onion : MonoBehaviour {
 		{
 			collisionObject.SendMessage("ApplyDamage", 1);
 		}
-		else if (collisionObject.tag == "PlayerWeapon")
+		if (collisionObject.tag == "PlayerWeapon")
 		{
 			Instantiate(explosion, transform.position, Quaternion.identity);
-			--health;
-			if(health == 0){
-				Destroy(gameObject);
-			}
+			health--;
+		}
+		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
+			Instantiate(explosion, transform.position, Quaternion.identity);
+			health--;
+		}
+		if(health == 0){
+			Destroy(gameObject);
 		}
 	}
 }

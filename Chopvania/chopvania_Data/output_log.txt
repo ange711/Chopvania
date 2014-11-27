@@ -1,17 +1,17 @@
-Initialize engine version: 4.5.5f1 (7684ad0c5a44)
+Initialize engine version: 4.5.0f6 (fd4616464986)
 GfxDevice: creating device client; threaded=1
 Direct3D:
-    Version:  Direct3D 11.0 [level 10.1]
-    Renderer: Intel(R) HD Graphics 3000 (ID=0x116)
-    Vendor:   Intel
-    VRAM:     64 MB
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: AMD RADEON HD 6670 (ID=0x6758)
+    Vendor:   ATI
+    VRAM:     1008 MB
 Begin MonoManager ReloadAssembly
-Platform assembly: C:\Users\Ange\Desktop\Chopvania\chopvania_Data\Managed\UnityEngine.dll (this message is harmless)
-Loading C:\Users\Ange\Desktop\Chopvania\chopvania_Data\Managed\UnityEngine.dll into Unity Child Domain
-Platform assembly: C:\Users\Ange\Desktop\Chopvania\chopvania_Data\Managed\Assembly-CSharp.dll (this message is harmless)
-Loading C:\Users\Ange\Desktop\Chopvania\chopvania_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
-- Completed reload, in  0.061 seconds
-desktop: 1600x900 40Hz; virtual: 1600x900 at 0,0
+Platform assembly: C:\Users\David\Desktop\Chopvania\Chopvania\chopvania_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\David\Desktop\Chopvania\Chopvania\chopvania_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\David\Desktop\Chopvania\Chopvania\chopvania_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\David\Desktop\Chopvania\Chopvania\chopvania_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+- Completed reload, in  0.040 seconds
+desktop: 1920x1080 60Hz; virtual: 3840x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 The referenced script on this Behaviour is missing!
@@ -205,138 +205,34 @@ NullReferenceException: Object reference not set to an instance of an object
  
 (Filename:  Line: -1)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+UnloadTime: 0.272875 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 8 unused Assets to reduce memory usage. Loaded Objects now: 2881.
+Total: 0.819533 ms (FindLiveObjects: 0.102328 ms CreateObjectMapping: 0.016903 ms MarkObjects: 0.208581 ms  DeleteObjects: 0.051013 ms)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Platform assembly: C:\Users\David\Desktop\Chopvania\Chopvania\chopvania_Data\Managed\System.dll (this message is harmless)
+UnloadTime: 2.463429 ms
+Unloading 3 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 43 unused Assets to reduce memory usage. Loaded Objects now: 913.
+Total: 1.150968 ms (FindLiveObjects: 0.025959 ms CreateObjectMapping: 0.015998 ms MarkObjects: 0.139758 ms  DeleteObjects: 0.513755 ms)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+UnloadTime: 1.448294 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 96 unused Assets to reduce memory usage. Loaded Objects now: 4000.
+Total: 2.259376 ms (FindLiveObjects: 0.206769 ms CreateObjectMapping: 0.042863 ms MarkObjects: 0.322379 ms  DeleteObjects: 0.794781 ms)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+UnloadTime: 4.673000 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 4000.
+Total: 0.796894 ms (FindLiveObjects: 0.107459 ms CreateObjectMapping: 0.023242 ms MarkObjects: 0.193790 ms  DeleteObjects: 0.006338 ms)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+UnloadTime: 4.941348 ms
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0 / Dirty serialized files: 0)
 
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
-
-NullReferenceException: Object reference not set to an instance of an object
-  at Hero.Update () [0x00000] in <filename unknown>:0 
- 
-(Filename:  Line: -1)
+Unloading 1 unused Assets to reduce memory usage. Loaded Objects now: 4000.
+Total: 1.451011 ms (FindLiveObjects: 0.201336 ms CreateObjectMapping: 0.046183 ms MarkObjects: 0.315135 ms  DeleteObjects: 0.011772 ms)
 

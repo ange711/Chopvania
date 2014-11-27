@@ -35,6 +35,9 @@ public class Cabbage : MonoBehaviour
 		if (collisionObject.tag == "PlayerWeapon" && isActive){
 			disabled ();
 		}
+		if(collisionObject.tag == "SkilletWall" && isActive && collisionObject.GetComponent<Skillet> ().getCollider()){
+			disabled ();
+		}
 	}
 
 

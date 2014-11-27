@@ -13,7 +13,7 @@ public class MainCamera : MonoBehaviour
 	void Update(){
 		if(!zoomedOut){
 			Vector3 nextPos = transform.position;
-			nextPos.x = focus.position.x + 4;
+			nextPos.x = focus.position.x + 2;
 			float ydiff = Mathf.Abs(focus.position.y - nextPos.y);
 			if(ydiff > 3){
 				nextPos.y = focus.position.y;

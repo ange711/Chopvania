@@ -21,6 +21,9 @@ public class Tomato : MonoBehaviour{
 		if (collisionObject.tag == "PlayerWeapon" || collisionObject.tag == "Explosion"){
 			Explode ();
 		}
+		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
+			Explode();
+		}
 	}
 
 	public void Explode(){
@@ -35,7 +38,7 @@ public class Tomato : MonoBehaviour{
 			rigidbody2D.AddForce (direction.normalized * speed);
 			transform.localRotation *= Quaternion.Euler (0f, 0f, 10f);
 		}
-		if (Mathf.Abs (transform.position.x - player.transform.position.x) < 1.5) {
+		if (Mathf.Abs (Vector2.Distance (transform.position, player.transform.position)) < 1.5) {
 			Instantiate(explosion, transform.position, Quaternion.identity);
 			Destroy (gameObject);
 		}
