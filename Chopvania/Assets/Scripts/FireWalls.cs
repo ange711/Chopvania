@@ -11,7 +11,7 @@ public class FireWalls : MonoBehaviour {
 	{
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "Player") {
-			collisionObject.SendMessage ("ApplyDamage", 99999);
+			collisionObject.SendMessage ("Die");
 		} 
 		if(collisionObject.tag != "Fire" && collisionObject.tag != "Player"){
 			Destroy(collisionObject.gameObject);
