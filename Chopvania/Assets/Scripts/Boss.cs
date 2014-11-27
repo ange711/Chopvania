@@ -18,7 +18,7 @@ public class Boss : MonoBehaviour {
 	int damage = 4;
 	float invincibleTime;
 	SpriteRenderer spriteRenderer;
-	Vector2 position = new Vector2(34.34713f, -41.90192f);
+	//Vector2 position = new Vector2(34.34713f, -41.90192f);
 	
 	void Awake(){
 		//boxcollider = GetComponent<BoxCollider2D>();
@@ -55,6 +55,7 @@ public class Boss : MonoBehaviour {
 		tentacleTime = Mathf.Max(0, tentacleTime - Time.deltaTime);
 		if(spawnTime <= 0)
 		{
+			Vector2 position = new Vector2(transform.position.x - 1f, transform.position.y);
 			var o = (GameObject)Instantiate (spawn, position, Quaternion.identity);
 			spawnTime = 6f;
 		}

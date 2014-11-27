@@ -703,7 +703,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ab493286c86bc6a4f9a65324254a8aa5, type: 2}
       propertyPath: m_LocalPosition.z
-      value: .0699023455
+      value: .129999995
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ab493286c86bc6a4f9a65324254a8aa5, type: 2}
       propertyPath: m_LocalRotation.x
@@ -723,7 +723,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: ab493286c86bc6a4f9a65324254a8aa5, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 21200000, guid: ab493286c86bc6a4f9a65324254a8aa5, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -4259,7 +4259,7 @@ Transform:
   m_PrefabInternal: {fileID: 230775134}
   m_GameObject: {fileID: 1114809973}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 23.604248, y: 2.42404652, z: .0699023455}
+  m_LocalPosition: {x: 23.604248, y: 2.42404652, z: .129999995}
   m_LocalScale: {x: 1, y: 1.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1643259240}
@@ -5331,7 +5331,7 @@ ParticleSystemRenderer:
   m_LightmapIndex: 255
   m_LightmapTilingOffset: {x: 1, y: 1, z: 0, w: 0}
   m_Materials:
-  - {fileID: 2100000, guid: 49ee7255899d2aa4086b5bea46f4a292, type: 2}
+  - {fileID: 2100000, guid: 886035c577c2e9646b38bb138630cd1c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 0
@@ -8131,7 +8131,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lifebar: {fileID: 1707825312}
   hurtSpeed: -2
-  jumpForce: 700
+  jumpForce: 600
   groundMask:
     serializedVersion: 2
     m_Bits: 256
@@ -9995,7 +9995,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2070439405}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -52.9914703, y: -13.1023903, z: .0999023467}
+  m_LocalPosition: {x: -52.9914703, y: -13.1023903, z: .140000001}
   m_LocalScale: {x: .355073392, y: .35507378, z: 1}
   m_Children: []
   m_Father: {fileID: 253160422}
