@@ -4,10 +4,8 @@ using System.Collections;
 public class Onion : MonoBehaviour {
 
 	public float runSpeed = 5f;
-	public GameObject bullet1;
-	public GameObject bullet2;
+	public GameObject layer;
 	bool isFacingRight = false;
-	Animator animator;
 	PolygonCollider2D polyCollider;
 	float shootingTime = 2.0f;
 	float reverseTime = 2.5f;
@@ -16,7 +14,6 @@ public class Onion : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		animator = GetComponent<Animator>();
 		polyCollider = GetComponent<PolygonCollider2D>();
 		rigidbody2D.velocity = new Vector2(0.5f * runSpeed, 0f);
 		Flip ();
@@ -68,9 +65,9 @@ public class Onion : MonoBehaviour {
 			bulletPosition += offset;
 			GameObject bulletObject;
 			if(isFacingRight)
-				 bulletObject = (GameObject)Instantiate(bullet1, bulletPosition, Quaternion.identity);
+				 bulletObject = (GameObject)Instantiate(layer, bulletPosition, Quaternion.identity);
 			else
-				bulletObject = (GameObject)Instantiate(bullet2, bulletPosition, Quaternion.identity);
+				bulletObject = (GameObject)Instantiate(layer, bulletPosition, Quaternion.Euler (0f, 180f, 0f));
 			float bulletSpeed = Orient(500f);
 			bulletObject.rigidbody2D.AddForce(new Vector2(bulletSpeed, 0));
 		}
