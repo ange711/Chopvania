@@ -1,11 +1,14 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\MainCamera.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\FireWalls.cs">
     <Files>
-      <File FileName="Assets\Scripts\Skillet.cs" Line="19" Column="3" />
-      <File FileName="Assets\Scripts\Pumpkin.cs" Line="33" Column="4" />
-      <File FileName="Assets\Scripts\Potato.cs" Line="47" Column="29" />
-      <File FileName="Assets\Scripts\MainCamera.cs" Line="7" Column="25" />
+      <File FileName="Assets\Scripts\Ice_path.cs" Line="43" Column="2" />
+      <File FileName="Assets\Scripts\FireWalls.cs" Line="7" Column="47" />
+      <File FileName="Assets\Scripts\Skillet.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Pumpkin.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Potato.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\MainCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets\Scripts\Ice_path.cs" Line="32" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

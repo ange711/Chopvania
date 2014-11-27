@@ -27,12 +27,12 @@ public class Ice_path : MonoBehaviour {
 			isFacingRight = GameObject.FindGameObjectWithTag("Player").GetComponent<Hero>().isFacingRight;
 			if(!isFacingRight)
 			{
-				Vector2 force = new Vector2(-700f,0);
+				Vector2 force = new Vector2(-300f,0);
 				Player.rigidbody2D.AddForce(force);
 			}
 			else
 			{
-				Vector2 force = new Vector2(700f,0);
+				Vector2 force = new Vector2(300f,0);
 				Player.rigidbody2D.AddForce(force);
 			}
 			
