@@ -10,6 +10,7 @@ public class nail : MonoBehaviour {
 		if (collisionObject.tag == "Player")
 		{
 			collisionObject.SendMessage("ApplyDamage", 1);
+			collisionObject.rigidbody2D.AddForce((new Vector2(0f, 1000f)));
 		}
 		
 	}

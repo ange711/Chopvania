@@ -3,23 +3,18 @@ using System.Collections;
 
 public class Onion : MonoBehaviour {
 
-	public float runSpeed = 5f;
+	float runSpeed = 5f;
 	public GameObject layer;
 	bool isFacingRight = false;
-	PolygonCollider2D polyCollider;
 	float shootingTime = 2.0f;
-	float reverseTime = 2.5f;
-	public GameObject explosion;
+	float reverseTime = 4f;
 	int health = 3;
-
-	// Use this for initialization
+	
 	void Start () {
-		polyCollider = GetComponent<PolygonCollider2D>();
 		rigidbody2D.velocity = new Vector2(0.5f * runSpeed, 0f);
 		Flip ();
 	}
-	
-	// Update is called once per frame
+
 	void Update () {
 		bool reverse = updateReverse ();
 		if (reverse)
@@ -34,7 +29,7 @@ public class Onion : MonoBehaviour {
 	{
 		reverseTime = Mathf.Max(0, reverseTime - Time.deltaTime);
 		if (reverseTime <= 0) {
-			reverseTime = 2.5f;
+			reverseTime = 4f;
 			return true;
 
 		} else
@@ -68,7 +63,7 @@ public class Onion : MonoBehaviour {
 				 bulletObject = (GameObject)Instantiate(layer, bulletPosition, Quaternion.identity);
 			else
 				bulletObject = (GameObject)Instantiate(layer, bulletPosition, Quaternion.Euler (0f, 180f, 0f));
-			float bulletSpeed = Orient(500f);
+			float bulletSpeed = Orient(400f);
 			bulletObject.rigidbody2D.AddForce(new Vector2(bulletSpeed, 0));
 		}
 	}
@@ -82,11 +77,9 @@ public class Onion : MonoBehaviour {
 		}
 		if (collisionObject.tag == "PlayerWeapon")
 		{
-			Instantiate(explosion, transform.position, Quaternion.identity);
 			health--;
 		}
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
-			Instantiate(explosion, transform.position, Quaternion.identity);
 			health--;
 		}
 		if(health == 0){

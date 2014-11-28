@@ -8,12 +8,13 @@ public class OnionLayer : MonoBehaviour
 	void OnTriggerEnter2D(Collider2D col)
 	{
 		GameObject collisionObject = col.gameObject;
-		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero>().IsInvincible())
-		{
-			collisionObject.SendMessage("ApplyDamage", damage);
-			Destroy(gameObject);
-		}
-		else
-			Destroy(gameObject);
+		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero> ().IsInvincible ()) {
+						collisionObject.SendMessage ("ApplyDamage", damage);
+						Destroy (gameObject);
+		} 
+		else if (collisionObject.tag == "Enemy") {
+				}
+			else
+				Destroy (gameObject);
 	}
 }
