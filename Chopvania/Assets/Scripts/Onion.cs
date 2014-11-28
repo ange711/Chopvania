@@ -5,6 +5,7 @@ public class Onion : MonoBehaviour {
 
 	float runSpeed = 5f;
 	public GameObject layer;
+	public GameObject onionParticles;
 	bool isFacingRight = false;
 	float shootingTime = 2.0f;
 	float reverseTime = 4f;
@@ -77,9 +78,11 @@ public class Onion : MonoBehaviour {
 		}
 		if (collisionObject.tag == "PlayerWeapon")
 		{
+			Instantiate(onionParticles, new Vector3(transform.position.x, transform.position.y, -5f), Quaternion.identity);
 			health--;
 		}
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
+			Instantiate(onionParticles, new Vector3(transform.position.x, transform.position.y, -5f), Quaternion.identity);
 			health--;
 		}
 		if(health == 0){

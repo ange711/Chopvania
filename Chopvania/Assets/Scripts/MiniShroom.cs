@@ -2,22 +2,22 @@
 using System.Collections;
 
 public class MiniShroom : MonoBehaviour {
-
-	public LayerMask groundMask;
-	float speed = 3f;
+	
 	GameObject player;
+	GameObject boss;
 	CircleCollider2D circlecollider;
+	bool jumpCD = true;
 		
 	void Awake()
 	{
-		circlecollider = GetComponent<CircleCollider2D>();
 		player = GameObject.FindGameObjectWithTag("Player");
-		Destroy (gameObject, 12f);
+		boss = GameObject.FindGameObjectWithTag("Boss");
 	}
 	
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon"){
+			boss.GetComponent<Boss>().MinionMinus();
 			Destroy(gameObject);
 		}
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
@@ -25,11 +25,25 @@ public class MiniShroom : MonoBehaviour {
 		}
 		if (collisionObject.tag == "Player") 
 		{
-			collisionObject.SendMessage ("ApplyDamage", 2);
+			collisionObject.SendMessage ("ApplyDamage", 1);
 		}
 	}
 	
 	void Update(){
-		rigidbody2D.velocity = new Vector2 (-speed, 0f);
+		if (jumpCD && (Vector2.Distance (player.transform.position, transform.position) < 0f)) {
+			rigidbody2D.AddForce(new Vector2(1, 20f));
+			jumpCD = false;
+		}
+		if (jumpCD && (Vector2.Distance (player.transform.position, transform.position) > 0f)) {
+			rigidbody2D.AddForce(new Vector2(-1, 20f));
+			jumpCD = false;
+		}
+		if (!jumpCD)
+			Invoke ("JumpReset", 2f);
+
+	}
+
+	void JumpReset(){
+		jumpCD = true;
 	}
 }

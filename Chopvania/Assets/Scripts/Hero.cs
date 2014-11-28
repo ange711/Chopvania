@@ -109,12 +109,13 @@ public class Hero : MonoBehaviour
 			Flip();
 		if (isGrounded && Input.GetButtonDown("Jump") && !skilletStasis)
 		{
+			jump.Play ();
 			rigidbody2D.gravityScale = 3;
 			rigidbody2D.AddForce(new Vector2(0, jumpForce));
 		}
 		else if (Input.GetButtonUp("Jump") && rigidbody2D.velocity.y > 0)
 		{
-			jump.Play ();
+
 			rigidbody2D.velocity = new Vector2(rigidbody2D.velocity.x, 0);
 		}
 		if (!isGrounded)

@@ -13,15 +13,15 @@ public class Boss : MonoBehaviour {
 	PolygonCollider2D polyCollider;
 	public GameObject spawn;
 	public GameObject tentacle;
+	public GameObject star;
 	bool idle = true;
 	bool damageable = true;
 	int damage = 4;
 	float invincibleTime;
 	SpriteRenderer spriteRenderer;
-	//Vector2 position = new Vector2(34.34713f, -41.90192f);
+	float pos;
 	
 	void Awake(){
-		//boxcollider = GetComponent<BoxCollider2D>();
 		polyCollider = GetComponent<PolygonCollider2D> ();
 		player = GameObject.FindGameObjectWithTag("Player");
 		spriteRenderer = GetComponent<SpriteRenderer>();
@@ -56,17 +56,16 @@ public class Boss : MonoBehaviour {
 		if(spawnTime <= 0)
 		{
 			Vector2 position = new Vector2(transform.position.x - 1f, transform.position.y);
-			var o = (GameObject)Instantiate (spawn, position, Quaternion.identity);
+			Instantiate (spawn, position, Quaternion.identity);
 			spawnTime = 6f;
 		}
 		if (tentacleTime <= 0)
 		{
-			float prevPos = playerPosition;
-			playerPosition = player.transform.position.x;
-			if(Mathf.Abs(prevPos - playerPosition) <= 1)
-			{
-				var o = (GameObject)Instantiate (tentacle, player.transform.position, Quaternion.identity);
-			}
+			pos = player.transform.position.x;
+			Instantiate (star, new Vector3(pos, -19f, 5f), Quaternion.identity);
+			Instantiate (star, new Vector3(pos + 5f, -19f, 5f), Quaternion.identity);
+			Instantiate (star, new Vector3(pos - 5f, -19f, 5f), Quaternion.identity);
+			Invoke("tentacleAttack", 1.5f);
 			tentacleTime = 5f;
 		}
 	}
@@ -75,11 +74,11 @@ public class Boss : MonoBehaviour {
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon" && damageable){
 			health--;
-			invincibleTime = 0.5f;
+			invincibleTime = 2f;
 		}
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
 			health--;
-			invincibleTime = 0.5f;
+			invincibleTime = 2f;
 		}
 		if(health == 0){
 			Instantiate(explosion, transform.position, Quaternion.identity);
@@ -88,6 +87,16 @@ public class Boss : MonoBehaviour {
 		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero>().IsInvincible()){
 			collisionObject.SendMessage("ApplyDamage", damage);
 		}
+	}
+
+	public void MinionMinus(){
+
+	}
+
+	void tentacleAttack(){
+		Instantiate (tentacle, new Vector3(pos, -19f, 5f), Quaternion.identity);
+		Instantiate (tentacle, new Vector3(pos + 5f, -19f, 5f), Quaternion.identity);
+		Instantiate (tentacle, new Vector3(pos - 5f, -19f, 5f), Quaternion.identity);
 	}
 	
 	void UpdateHit()
@@ -105,5 +114,6 @@ public class Boss : MonoBehaviour {
 		}
 		spriteRenderer.color = nextColor;
 	}
+	
 }
 
