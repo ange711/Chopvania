@@ -5,14 +5,6 @@ public class Tentacle : MonoBehaviour {
 
 	float speed = 2f;
 	GameObject player;
-	PolygonCollider2D polycollider;
-	
-	void Awake()
-	{
-		polycollider = GetComponent<PolygonCollider2D>();
-		player = GameObject.FindGameObjectWithTag("Player");
-		Destroy (gameObject, 2f);
-	}
 	
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;

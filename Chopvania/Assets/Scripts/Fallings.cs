@@ -2,15 +2,13 @@
 using System.Collections;
 
 public class Fallings : MonoBehaviour {
-	
-	Transform playerTransform;
+
 	GameObject Player;
 	bool isNearPlayer = false;
 	
 	
 	void Awake()
 	{
-		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	

@@ -67,7 +67,7 @@ public class Cabbage : MonoBehaviour
 	}
 
 	void disabled(){
-		GameObject sleep = (GameObject)Instantiate(sleepParticle, transform.position, Quaternion.Euler (-72f, 90f, -90f));
+		Instantiate(sleepParticle, transform.position, Quaternion.Euler (-72f, 90f, -90f));
 		isActive = false;
 		activeTime = 5f; //idle time length
 		timerFlag = false;

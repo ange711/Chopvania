@@ -2,8 +2,7 @@
 using System.Collections;
 
 public class Ice_path : MonoBehaviour {
-	
-	Transform playerTransform;
+
 	GameObject Player;
 	bool isFacingRight = false;
 	bool onTheIce =false;
@@ -11,7 +10,6 @@ public class Ice_path : MonoBehaviour {
 	// Use this for initialization
 	void Awake()
 	{
-		playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 		Player = GameObject.FindGameObjectWithTag ("Player");
 	}
 	

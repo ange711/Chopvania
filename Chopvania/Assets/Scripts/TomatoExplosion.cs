@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TomatoExplosion : MonoBehaviour
 {
-	public int damage = 5;
+	int damage = 3;
 	
 	void OnTriggerEnter2D(Collider2D col)
 	{

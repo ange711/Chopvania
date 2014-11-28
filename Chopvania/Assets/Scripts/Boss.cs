@@ -3,26 +3,23 @@ using System.Collections;
 
 public class Boss : MonoBehaviour {
 	
-	public int health = 2;
+	int health = 5;
 	float spawnTime = 3f;
 	float tentacleTime = 3f;
-	float playerPosition = 0f;
 	public GameObject explosion;
 	GameObject player;
-	//BoxCollider2D boxcollider;
-	PolygonCollider2D polyCollider;
 	public GameObject spawn;
 	public GameObject tentacle;
 	public GameObject star;
 	bool idle = true;
 	bool damageable = true;
-	int damage = 4;
+	int damage = 2;
 	float invincibleTime;
 	SpriteRenderer spriteRenderer;
 	float pos;
+	float offSet;
 	
 	void Awake(){
-		polyCollider = GetComponent<PolygonCollider2D> ();
 		player = GameObject.FindGameObjectWithTag("Player");
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		
@@ -33,12 +30,10 @@ public class Boss : MonoBehaviour {
 		if (Mathf.Abs (player.transform.position.x - transform.position.x) < 10f) 
 		{
 			idle = false;
-			//GetComponent<Animator> ().SetBool ("playerClose", true);
 			damageable = true;
 		}
 		else 
 		{
-			//GetComponent<Animator> ().SetBool ("playerClose", false);
 			damageable = false;
 		}
 		
@@ -62,9 +57,10 @@ public class Boss : MonoBehaviour {
 		if (tentacleTime <= 0)
 		{
 			pos = player.transform.position.x;
+			offSet = health;
 			Instantiate (star, new Vector3(pos, -19f, 5f), Quaternion.identity);
-			Instantiate (star, new Vector3(pos + 5f, -19f, 5f), Quaternion.identity);
-			Instantiate (star, new Vector3(pos - 5f, -19f, 5f), Quaternion.identity);
+			Instantiate (star, new Vector3(pos + offSet, -19f, 5f), Quaternion.identity);
+			Instantiate (star, new Vector3(pos - offSet, -19f, 5f), Quaternion.identity);
 			Invoke("tentacleAttack", 1.5f);
 			tentacleTime = 5f;
 		}
@@ -95,8 +91,8 @@ public class Boss : MonoBehaviour {
 
 	void tentacleAttack(){
 		Instantiate (tentacle, new Vector3(pos, -19f, 5f), Quaternion.identity);
-		Instantiate (tentacle, new Vector3(pos + 5f, -19f, 5f), Quaternion.identity);
-		Instantiate (tentacle, new Vector3(pos - 5f, -19f, 5f), Quaternion.identity);
+		Instantiate (tentacle, new Vector3(pos + offSet, -19f, 5f), Quaternion.identity);
+		Instantiate (tentacle, new Vector3(pos - offSet, -19f, 5f), Quaternion.identity);
 	}
 	
 	void UpdateHit()

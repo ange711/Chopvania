@@ -336,7 +336,7 @@ public class Hero : MonoBehaviour
 				else
 					rotater = Quaternion.identity;
 				
-				GameObject Skillet = (GameObject)Instantiate(skilletObj, skilletPosition, transform.rotation * rotater);
+				Instantiate(skilletObj, skilletPosition, transform.rotation * rotater);
 				Ammo--;
 				skilletStasis = true;
 				break;

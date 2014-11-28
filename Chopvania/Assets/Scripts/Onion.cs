@@ -56,8 +56,8 @@ public class Onion : MonoBehaviour {
 		if (shootingTime <= 0)
 		{
 			shootingTime = 2.0f;
-			Vector2 bulletPosition = transform.position;
-			Vector2 offset = new Vector2(Orient(0.75f), 0.05f);
+			Vector3 bulletPosition = transform.position;
+			Vector3 offset = new Vector3(Orient(0.75f), 0.05f, -2f);
 			bulletPosition += offset;
 			GameObject bulletObject;
 			if(isFacingRight)

@@ -3,19 +3,17 @@ using System.Collections;
 
 public class Potato : MonoBehaviour {
 	
-	public int health = 8;
+	int health = 5;
 	public GameObject explosion;
 	GameObject player;
-	BoxCollider2D boxcollider;
 	bool idle = true;
 	float speed = 4f;
-	int damage = 4;
+	int damage = 2;
 	float jumpTimer = 0f;
 	float invincibleTime;
 	SpriteRenderer spriteRenderer;
 	
 	void Awake(){
-		boxcollider = GetComponent<BoxCollider2D>();
 		player = GameObject.FindGameObjectWithTag("Player");
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		
@@ -46,12 +44,14 @@ public class Potato : MonoBehaviour {
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon"){
 			--health;
-			invincibleTime = 0.5f;
+			invincibleTime = 1f;
+			rigidbody2D.velocity = Vector2.zero;
 		}
 
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
 			--health;
-			invincibleTime = 0.5f;
+			invincibleTime = 1f;
+			rigidbody2D.velocity = Vector2.zero;
 		}
 
 		if(health == 0){

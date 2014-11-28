@@ -414,6 +414,7 @@ Prefab:
     m_RemovedComponents:
     - {fileID: 5000000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
     - {fileID: 6100000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
+    - {fileID: 11400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
   m_RootGameObject: {fileID: 776419330}
   m_IsPrefabParent: 0
@@ -428,7 +429,6 @@ GameObject:
   - 4: {fileID: 776419336}
   - 212: {fileID: 776419335}
   - 95: {fileID: 776419334}
-  - 114: {fileID: 776419333}
   m_Layer: 0
   m_Name: Hero
   m_TagString: Player
@@ -436,47 +436,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &776419333
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 11400000, guid: 815a4dc8e7ec5c64083a088cc03b225c,
-    type: 2}
-  m_PrefabInternal: {fileID: 739216746}
-  m_GameObject: {fileID: 776419330}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fb77959f496619944b25d5606093ea90, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lifebar: {fileID: 0}
-  hurtSpeed: -2
-  jumpForce: 700
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 256
-  isAlive: 1
-  isFacingRight: 1
-  hurtTime: 0
-  invincibleTime: 0
-  currentLevel: 
-  footObj: {fileID: 100000, guid: f3a37e71155dc5e4aa2b58fadd07201f, type: 2}
-  barObj: {fileID: 100000, guid: d850bc9e15cd3fd4dab8879756fc893f, type: 2}
-  droppedBar: {fileID: 100000, guid: fa9aeb95aa3da2044adb4c88e0af94bd, type: 2}
-  knifeObj: {fileID: 100000, guid: 39be87af51a32224eb48862537fb8df4, type: 2}
-  droppedKnife: {fileID: 100000, guid: 79e7fc01c8e9ff443a94cc1263050a22, type: 2}
-  skilletObj: {fileID: 0}
-  droppedSkillet: {fileID: 0}
-  TURKEYObj: {fileID: 0}
-  droppedTURKEY: {fileID: 0}
-  donePie: {fileID: 0}
-  death: {fileID: 0}
-  eat: {fileID: 0}
-  kick: {fileID: 0}
-  hurt: {fileID: 0}
-  jump: {fileID: 0}
-  Run: {fileID: 0}
-  smack: {fileID: 0}
-  throwing: {fileID: 0}
 --- !u!95 &776419334
 Animator:
   serializedVersion: 3
@@ -492,7 +451,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &776419335
 SpriteRenderer:
   m_ObjectHideFlags: 0

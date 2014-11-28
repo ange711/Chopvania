@@ -742,11 +742,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 2dfa4941959dd3f4e87e607ebff15f29, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -12.5244217
+      value: -45.1858406
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2dfa4941959dd3f4e87e607ebff15f29, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -18.3344078
+      value: 8.47260475
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2dfa4941959dd3f4e87e607ebff15f29, type: 2}
       propertyPath: m_LocalPosition.z
@@ -838,7 +838,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 579663454}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: -4.37113883e-08}
-  m_LocalPosition: {x: -9.98212433, y: -20.1017895, z: 0}
+  m_LocalPosition: {x: -9.59837627, y: -20.1017895, z: 0}
   m_LocalScale: {x: 18.9272003, y: 7.57088137, z: 1}
   m_Children: []
   m_Father: {fileID: 1161028800}
@@ -945,7 +945,7 @@ Transform:
   m_PrefabInternal: {fileID: 566338950}
   m_GameObject: {fileID: 607159112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.5244217, y: -18.3344078, z: 0}
+  m_LocalPosition: {x: -45.1858406, y: 8.47260475, z: 0}
   m_LocalScale: {x: .745349228, y: .745349586, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2959,7 +2959,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86ec9acc03139f140aa6d6e5b414eff9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 5
   explosion: {fileID: 100000, guid: e0a6a26df1ec74b4ca9729d0a751a083, type: 2}
   spawn: {fileID: 100000, guid: 2dfa4941959dd3f4e87e607ebff15f29, type: 2}
   tentacle: {fileID: 100000, guid: 849c6dd8a9a30e540a35e681bb6a152c, type: 2}
