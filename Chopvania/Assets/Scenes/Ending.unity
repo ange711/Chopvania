@@ -105,7 +105,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 3df27acc7dfb3a94999163ecaa73c29a, type: 2}
   - {fileID: 100000, guid: 579900cc81c6d034d8cbb883986f64bc, type: 2}
   - {fileID: 100000, guid: 91a116f5ffe8a1a4aa3c579d22846ad3, type: 2}
-  level: bossRoom
+  level: startScreen
 --- !u!4 &795968445
 Transform:
   m_ObjectHideFlags: 0

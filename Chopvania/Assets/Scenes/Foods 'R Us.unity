@@ -1632,7 +1632,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!61 &65022282
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1642,7 +1641,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 3, y: 4.5}
+  m_Size: {x: 2, y: 4.5}
   m_Center: {x: 0, y: 2.55999994}
 --- !u!212 &65022283
 SpriteRenderer:
@@ -1689,6 +1688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11dfc0ad1783f6d46a6fc01fa10eb301, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 5
   explosion: {fileID: 100000, guid: e0a6a26df1ec74b4ca9729d0a751a083, type: 2}
 --- !u!61 &65022286
 BoxCollider2D:
@@ -3392,7 +3392,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &140427078
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4197,11 +4196,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -24.1045532
+      value: -24.6661644
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -4.64652443
+      value: -4.51087332
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5294,7 +5293,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &238777487
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5325,7 +5323,7 @@ Transform:
   m_PrefabInternal: {fileID: 180878525}
   m_GameObject: {fileID: 238777482}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -24.1045532, y: -4.64652443, z: 0}
+  m_LocalPosition: {x: -24.6661644, y: -4.51087332, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -7105,7 +7103,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &313054081
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7226,7 +7223,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &314474348
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7449,7 +7445,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &317528663
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7848,7 +7843,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &332980788
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11886,7 +11880,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &470143521
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24914,7 +24907,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1010850253}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 272.282104, y: -21.3103027, z: 5}
+  m_LocalPosition: {x: 272.315125, y: -21.3103027, z: 5}
   m_LocalScale: {x: 2.6475141, y: 2.64751649, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -25530,7 +25523,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1052832859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26491,7 +26483,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1098251654
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27789,7 +27780,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1149517561
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28846,7 +28836,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1203218249
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29434,7 +29423,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &1217705262
 GameObject:
   m_ObjectHideFlags: 0
@@ -30150,7 +30138,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1238431347
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -33732,7 +33719,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1424353619
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -43848,7 +43834,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1929549274
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -44358,7 +44343,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1959276123
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -45260,7 +45244,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &2008024644
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -46166,7 +46149,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &2038768860
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -46481,7 +46463,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &2051474849
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -47032,7 +47013,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &2066419085
 CircleCollider2D:
   m_ObjectHideFlags: 0

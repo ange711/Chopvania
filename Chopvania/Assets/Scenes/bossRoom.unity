@@ -1409,7 +1409,7 @@ AudioSource:
   serializedVersion: 3
   m_audioClip: {fileID: 8300000, guid: a052f8b5822a0c74f87e3e7b196193ca, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: .100000001
+  m_Volume: .344000012
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1886,7 +1886,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &1251685249
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2181,7 +2180,7 @@ GameObject:
   - 61: {fileID: 1437705238}
   - 114: {fileID: 1437705237}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: CamTrigger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2924,6 +2923,7 @@ GameObject:
   - 212: {fileID: 1793361625}
   - 114: {fileID: 1793361629}
   - 61: {fileID: 1793361627}
+  - 61: {fileID: 1793361624}
   m_Layer: 0
   m_Name: Boss
   m_TagString: Boss
@@ -2931,6 +2931,17 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!61 &1793361624
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1793361623}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Size: {x: 1.70000005, y: 2}
+  m_Center: {x: 0, y: 2.38418579e-07}
 --- !u!212 &1793361625
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2974,7 +2985,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Size: {x: 1.79999995, y: 2}
+  m_Size: {x: 1.60000002, y: 2}
   m_Center: {x: 2.38418579e-07, y: 4.76837158e-07}
 --- !u!114 &1793361629
 MonoBehaviour:

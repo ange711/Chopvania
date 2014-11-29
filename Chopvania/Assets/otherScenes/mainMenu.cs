@@ -27,7 +27,7 @@ public class mainMenu : MonoBehaviour {
 
 
 	// Use this for initialization
-	void Start () {
+	void Awake () {
         count = 1;
         	 _startSelected = true;
              instructSelect = false;

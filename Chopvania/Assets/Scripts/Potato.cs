@@ -3,7 +3,7 @@ using System.Collections;
 
 public class Potato : MonoBehaviour {
 	
-	int health = 5;
+	public int health = 5;
 	public GameObject explosion;
 	GameObject player;
 	bool idle = true;
@@ -12,6 +12,7 @@ public class Potato : MonoBehaviour {
 	float jumpTimer = 0f;
 	float invincibleTime;
 	SpriteRenderer spriteRenderer;
+	bool damageable = true;
 	
 	void Awake(){
 		player = GameObject.FindGameObjectWithTag("Player");
@@ -43,13 +44,15 @@ public class Potato : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D col){
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon"){
-			--health;
+			health--;
+			damageable = false;
 			invincibleTime = 1f;
 			rigidbody2D.velocity = Vector2.zero;
 		}
 
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
-			--health;
+			health--;
+			damageable = false;
 			invincibleTime = 1f;
 			rigidbody2D.velocity = Vector2.zero;
 		}
@@ -68,7 +71,7 @@ public class Potato : MonoBehaviour {
 		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero>().IsInvincible()){
 			collisionObject.SendMessage("ApplyDamage", damage);
 			float blowback = Mathf.Sign(player.transform.position.x - transform.position.x);
-			rigidbody2D.AddForce(new Vector2(blowback * -500f, 0));
+			rigidbody2D.AddForce(new Vector2(blowback * -1000f, 0));
 		}
 	}
 	
@@ -83,6 +86,7 @@ public class Potato : MonoBehaviour {
 		}
 		else
 		{
+			damageable = true;
 			nextColor.a = 1f;
 		}
 		spriteRenderer.color = nextColor;

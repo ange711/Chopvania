@@ -27,16 +27,11 @@ public class Boss : MonoBehaviour {
 	
 	void Update () {
 		UpdateHit ();
-		if (Mathf.Abs (player.transform.position.x - transform.position.x) < 10f) 
+		if (Mathf.Abs (player.transform.position.x - transform.position.x) < 30f) 
 		{
 			idle = false;
-			damageable = true;
+
 		}
-		else 
-		{
-			damageable = false;
-		}
-		
 		if(!idle)
 		{
 			updateSpawning();
@@ -70,6 +65,7 @@ public class Boss : MonoBehaviour {
 		GameObject collisionObject = col.gameObject;
 		if (collisionObject.tag == "PlayerWeapon" && damageable){
 			health--;
+			damageable = false;
 			invincibleTime = 2f;
 		}
 		if(collisionObject.tag == "SkilletWall" && collisionObject.GetComponent<Skillet> ().getCollider()){
@@ -108,6 +104,7 @@ public class Boss : MonoBehaviour {
 		}
 		else
 		{
+			damageable = true;
 			nextColor.a = 1f;
 		}
 		spriteRenderer.color = nextColor;

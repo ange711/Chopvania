@@ -298,6 +298,7 @@ public class Hero : MonoBehaviour
 				GameObject Foot = (GameObject)Instantiate(footObj, footPosition, transform.rotation);
 				Foot.rigidbody2D.velocity = rigidbody2D.velocity;
 				Invoke("weaponReset", 0.1f);
+				smack.Play ();
 				break;
 
 			case 1:
@@ -310,6 +311,7 @@ public class Hero : MonoBehaviour
 				Ammo--;
 				Bar.rigidbody2D.velocity = rigidbody2D.velocity;
 				Invoke("weaponReset", 0.2f);
+				smack.Play ();
 				break;
 
 			case 2:
@@ -339,6 +341,7 @@ public class Hero : MonoBehaviour
 				Instantiate(skilletObj, skilletPosition, transform.rotation * rotater);
 				Ammo--;
 				skilletStasis = true;
+				smack.Play ();
 				break;
 			}
 			attackDelay = 0.7f;
