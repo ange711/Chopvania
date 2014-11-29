@@ -80,6 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7352817986e8eb34a9a7781779915f7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stopPoint: {fileID: 100000, guid: 7d4195cf03d7c0447930d4963b2cf899, type: 2}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

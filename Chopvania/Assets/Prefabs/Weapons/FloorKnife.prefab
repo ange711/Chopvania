@@ -69,7 +69,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isOnFloor: 1
-  Ammo: 10
+  Ammo: 5
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

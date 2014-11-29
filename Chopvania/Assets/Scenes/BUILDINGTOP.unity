@@ -1801,7 +1801,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &394961246
 GameObject:
   m_ObjectHideFlags: 0
@@ -2478,7 +2477,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &533519968
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3818,7 +3816,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &736686602
 GameObject:
   m_ObjectHideFlags: 0
@@ -4469,7 +4466,6 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &881423412
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4568,7 +4564,7 @@ Transform:
   m_PrefabInternal: {fileID: 1925815123}
   m_GameObject: {fileID: 881423410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 139.320251, y: -22.9587517, z: 0}
+  m_LocalPosition: {x: -22.3943253, y: -6.90315819, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -9028,11 +9024,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 139.320251
+      value: -22.3943253
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -22.9587517
+      value: -6.90315819
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
       propertyPath: m_LocalPosition.z
