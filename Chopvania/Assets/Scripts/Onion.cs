@@ -60,7 +60,7 @@ public class Onion : MonoBehaviour {
 			Vector3 offset = new Vector3(Orient(0.75f), 0.05f, -2f);
 			bulletPosition += offset;
 			GameObject bulletObject;
-			if(isFacingRight)
+			if(!isFacingRight)
 				 bulletObject = (GameObject)Instantiate(layer, bulletPosition, Quaternion.identity);
 			else
 				bulletObject = (GameObject)Instantiate(layer, bulletPosition, Quaternion.Euler (0f, 180f, 0f));
