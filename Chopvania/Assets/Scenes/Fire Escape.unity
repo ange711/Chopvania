@@ -1936,6 +1936,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &59229897
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6469,6 +6470,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &205034586
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29528,6 +29530,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1027415391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31617,6 +31620,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!212 &1099454235
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -35856,6 +35860,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1225951505
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -42223,7 +42228,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0951ec93c6cf2304cab5150dcd5f0283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: BUILDINGTOP
+  levelName: RoofIntro
 --- !u!61 &1463290991
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -47459,6 +47464,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1649216449
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47660,6 +47666,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1657174403
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52299,6 +52306,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1795754874
 CircleCollider2D:
   m_ObjectHideFlags: 0

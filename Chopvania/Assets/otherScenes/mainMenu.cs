@@ -12,7 +12,7 @@ public class mainMenu : MonoBehaviour {
     bool instructSelect;
     bool showInstruct;
     bool exitSelect;
-	bool pressed = false;
+	//bool pressed = false;
 
 
     public GUIText _exit;
@@ -65,27 +65,22 @@ public class mainMenu : MonoBehaviour {
         updateColour();
 
 
-          if(Input.GetButtonDown("Jump"))
-          {
-              if (_startSelected == true)
-              {
-                  Application.LoadLevel("Foods 'R Us");
-              }
-              else
-
-                  if (instructSelect == true)
-                  {
-                      checkShowInstruct();
-                      Application.Quit();
-                  }
-                  else
-                  if(exitSelect == true)
-                  {
-                      Application.Quit();
-                  }
-          }
-
-          
+        if(Input.GetKeyDown(KeyCode.Return))
+        {
+        	if (_startSelected == true)
+            {
+            	Application.LoadLevel("Intro");
+            }
+            else if (instructSelect == true)
+            {
+            	checkShowInstruct();
+                //Application.Quit();
+            }
+            else if(exitSelect == true)
+            {
+            	Application.Quit();
+            }
+		}  
 	}
 
 

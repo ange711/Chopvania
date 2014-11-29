@@ -78,6 +78,8 @@ public class Boss : MonoBehaviour {
 		}
 		if(health == 0){
 			Instantiate(explosion, transform.position, Quaternion.identity);
+			GameObject.Find("EndCredits").AddComponent("TimedLevelSwitch");
+			GameObject.Find("EndCredits").GetComponent<TimedLevelSwitch>().levelName = "Ending";
 			Destroy(gameObject);
 		}
 		if (collisionObject.tag == "Player" && !collisionObject.GetComponent<Hero>().IsInvincible()){

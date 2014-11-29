@@ -1889,6 +1889,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &348648044
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2737,6 +2738,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &456087000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4537,7 +4539,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0951ec93c6cf2304cab5150dcd5f0283, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelName: Fire Escape
+  levelName: FireIntro
 --- !u!61 &846211988
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6402,6 +6404,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!58 &1172301835
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10864,6 +10867,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &1667284595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13435,6 +13439,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &2127286568
 MonoBehaviour:
   m_ObjectHideFlags: 0
