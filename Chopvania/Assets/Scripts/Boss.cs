@@ -18,8 +18,11 @@ public class Boss : MonoBehaviour {
 	SpriteRenderer spriteRenderer;
 	float pos;
 	float offSet;
+	int minionsLeft = 0;
+	Vector3 position;
 	
 	void Awake(){
+		position = new Vector3(transform.position.x -30f, transform.position.y, -2f);
 		player = GameObject.FindGameObjectWithTag("Player");
 		spriteRenderer = GetComponent<SpriteRenderer>();
 		
@@ -43,12 +46,14 @@ public class Boss : MonoBehaviour {
 	{
 		spawnTime = Mathf.Max(0, spawnTime - Time.deltaTime);
 		tentacleTime = Mathf.Max(0, tentacleTime - Time.deltaTime);
-		if(spawnTime <= 0)
+
+		if(spawnTime <= 0 && minionsLeft < 2)
 		{
-			Vector2 position = new Vector2(transform.position.x - 1f, transform.position.y);
+			minionsLeft++;
 			Instantiate (spawn, position, Quaternion.identity);
 			spawnTime = 6f;
 		}
+
 		if (tentacleTime <= 0)
 		{
 			pos = player.transform.position.x;
@@ -84,7 +89,7 @@ public class Boss : MonoBehaviour {
 	}
 
 	public void MinionMinus(){
-
+		minionsLeft--;
 	}
 
 	void tentacleAttack(){

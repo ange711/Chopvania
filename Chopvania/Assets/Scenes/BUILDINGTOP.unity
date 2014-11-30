@@ -4495,8 +4495,8 @@ MonoBehaviour:
   droppedBar: {fileID: 100000, guid: fa9aeb95aa3da2044adb4c88e0af94bd, type: 2}
   knifeObj: {fileID: 100000, guid: 39be87af51a32224eb48862537fb8df4, type: 2}
   droppedKnife: {fileID: 100000, guid: 79e7fc01c8e9ff443a94cc1263050a22, type: 2}
-  skilletObj: {fileID: 0}
-  droppedSkillet: {fileID: 0}
+  skilletObj: {fileID: 100000, guid: e0f77b61c39b6d14d85abb7d37050a95, type: 2}
+  droppedSkillet: {fileID: 100000, guid: 18d7b92e429381f469454d0c7e880c0a, type: 2}
   donePie: {fileID: 965699035}
   death: {fileID: 791700132}
   eat: {fileID: 44536701}
@@ -9114,6 +9114,14 @@ Prefab:
       propertyPath: m_Color.b
       value: .647058845
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
+      propertyPath: skilletObj
+      value: 
+      objectReference: {fileID: 100000, guid: e0f77b61c39b6d14d85abb7d37050a95, type: 2}
+    - target: {fileID: 11400000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
+      propertyPath: droppedSkillet
+      value: 
+      objectReference: {fileID: 100000, guid: 18d7b92e429381f469454d0c7e880c0a, type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 815a4dc8e7ec5c64083a088cc03b225c, type: 2}
   m_RootGameObject: {fileID: 881423410}
