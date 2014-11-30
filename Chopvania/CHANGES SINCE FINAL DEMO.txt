@@ -1,5 +1,13 @@
 Git Link to Project:	 https://github.com/ange711/Chopvania
 
+To play the game:
+Please download the project as a zip from the above URL and run Chopvania.exe (located in the main directory).
+
+If for any reason there is an issue with this builder, please refer to:
+Assets/Scenes/ startScreen
+
+
+
 CHANGE LOG: POST-FINAL DEMONSTRATION
 
 1.	Massive overhaul on the visual aspects of the game, This includes enemies, backgrounds, as well as bosses and traps.
@@ -8,12 +16,6 @@ CHANGE LOG: POST-FINAL DEMONSTRATION
 4.	Cutscenes at both the start and during level transitions have been added, giving the game stronger continuity as opposed to abrupt changes.
 5.	Overall balance changes in terms of player/enemy damage, as well as balancing the sounds being played (repetitive sounds emanating from the player have become quieter, being overpowered by the music of the level.
 
-Please use the built game present in the Chopvania folder. 
 
 
-If for any reason there is an issue with this builder, please refer to:
-
-Assets/Scenes/ startScreen
-
-
-Should there be any issue with the gitHub link provided or any of the preceding, please contact david_paparo@hotmail.com
+Should there be any issue with the gitHub link provided or any of the preceding, please contact david_paparo@hotmail.com or angela.carriero@hotmail.com
