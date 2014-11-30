@@ -16,4 +16,4 @@ If for any reason there is an issue with this builder, please refer to:
 Assets/Scenes/ startScreen
 
 
-Should there be any issue with the gitHub link provided or any of the preceeding,, please contact david_paparo@hotmail.com
+Should there be any issue with the gitHub link provided or any of the preceding, please contact david_paparo@hotmail.com
