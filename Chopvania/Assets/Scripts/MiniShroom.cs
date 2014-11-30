@@ -30,20 +30,19 @@ public class MiniShroom : MonoBehaviour {
 
 		if (collisionObject.tag == "Player") 
 		{
+			transform.localScale = new Vector3(transform.localScale.x *-1, transform.localScale.y, transform.localScale.z);
+			canTurn = false;
+			Invoke ("Turner", 1);
+			turnValue *= -1;
 			collisionObject.SendMessage ("ApplyDamage", 1);
 		}
 
-		if (collisionObject.tag == "Wall" && canTurn){
-			transform.localScale = new Vector3(transform.localScale.x *-1, transform.localScale.y, transform.localScale.z);
-			turnValue = 1;
-			canTurn = false;
-			Invoke ("Turner", 1);
-		}
 
-		if(collisionObject.tag == "Boss" && canTurn){
+		if((collisionObject.tag == "Boss" || collisionObject.tag == "Wall" || collisionObject.tag == "Enemy") && canTurn){
+			transform.localScale = new Vector3(transform.localScale.x *-1, transform.localScale.y, transform.localScale.z);
 			canTurn = false;
 			Invoke ("Turner", 1);
-			turnValue = -1;
+			turnValue *= -1;
 		}
 	}
 	
