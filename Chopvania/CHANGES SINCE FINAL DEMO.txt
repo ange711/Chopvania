@@ -1,3 +1,5 @@
+Git Link to Project:	 https://github.com/ange711/Chopvania
+
 CHANGE LOG: POST-FINAL DEMONSTRATION
 
 1.	Massive overhaul on the visual aspects of the game, This includes enemies, backgrounds, as well as bosses and traps.
@@ -5,3 +7,13 @@ CHANGE LOG: POST-FINAL DEMONSTRATION
 3.	Level design in all levels besides Foods ‘R Us have been greatly modified, allowing for slightly longer levels and more interesting gameplay challenges.
 4.	Cutscenes at both the start and during level transitions have been added, giving the game stronger continuity as opposed to abrupt changes.
 5.	Overall balance changes in terms of player/enemy damage, as well as balancing the sounds being played (repetitive sounds emanating from the player have become quieter, being overpowered by the music of the level.
+
+Please use the built game present in the Chopvania folder. 
+
+
+If for any reason there is an issue with this builder, please refer to:
+
+Assets/Scenes/ startScreen
+
+
+Should there be any issue with the gitHub link provided or any of the preceeding,, please contact david_paparo@hotmail.com
